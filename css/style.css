@@ -54,6 +54,7 @@ header{
 }
 .contact-links{
     display: flex;
+    justify-content: center;
 }
 .contact-links span{
     padding: 0 20px;
@@ -302,10 +303,17 @@ footer{
     padding: 0 8vw;
     gap: 20px;
 }
-footer>h3{
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.footer-content h3{
     font-size: 22px;
     font-weight: normal;
     line-height: 1.6;
+    margin: 0;
 }
 .foot-contact-links{
     display: flex;
@@ -316,7 +324,7 @@ footer>h3{
 .foot-contact-links>span{
     padding: 0 20px;
 }
-footer>p{
+footer> .copy{
     position: absolute;
     bottom: 50px;
     color: #7D7D7D;

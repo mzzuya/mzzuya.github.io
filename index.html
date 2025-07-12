@@ -14,26 +14,25 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <script>
-        AOS.init();
-    </script>
     <!--header-->
-    <header class="intro">
-        <h3>Web Publisher Minju's</h3>
-        <h1>PORTFOLIO</h1>
-        <p>웹 퍼블리셔 / 프론트엔드</p>
-        <h2>디자인 감각과 구조 설계를 함께 고려하는 웹 퍼블리셔입니다.<br>정보 전달 중심의 사용자 경험을 만들어갑니다.</h2>
-        <div class="contact-links">
-            <a href="pdf/parkminju.pdf" target="_blank">🔗 [이력서 보기]</a>
-            <span>|</span>
-            <p>📞 010-8475-7515</p>
+    <header>
+        <div class="intro" data-aos="zoom-in" data-aos-duration="1000">
+            <h3>Web Publisher Minju's</h3>
+            <h1>PORTFOLIO</h1>
+            <p>웹 퍼블리셔 / 프론트엔드</p>
+            <h2>디자인 감각과 구조 설계를 함께 고려하는 웹 퍼블리셔입니다.<br>정보 전달 중심의 사용자 경험을 만들어갑니다.</h2>
+            <div class="contact-links">
+                <a href="pdf/parkminju.pdf" target="_blank">🔗 [이력서 보기]</a>
+                <span>|</span>
+                <p>📞 010-8475-7515</p>
+            </div>
         </div>
         <img class="scroll-icon" src="img/scroll.svg" alt="스크롤버튼">
     </header>
 
     <!--saveit-->
     <section>
-        <div class="frame-wrap">
+        <div class="frame-wrap" data-aos="fade-right" data-aos-duration="3000">
             <img src="img/desktop_shadow.png" alt="데스크탑 그림자" class="device-shadow">
             <img src="img/desktop.png" alt="데스크탑 프레임" class="device-frame">
             <div class="screen" style="background-image: url('img/saveit_bg.png');">
@@ -42,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="project-info">
+        <div class="project-info" data-aos="fade-left" data-aos-duration="3000">
             <h2>Team Project</h2>
             <h3>SaveIT</h3>
             <p>예금 추천 서비스 UI (React 기반)</p>
@@ -69,7 +68,7 @@
 
     <!--mini-->
     <section class="project-block">
-        <div class="project-info mini-info">
+        <div class="project-info mini-info" data-aos="fade-right" data-aos-duration="3000">
             <h2>Brand Redesign</h2>
             <h3>MINI</h3>
             <p>영국 프리미엄 자동차 브랜드 사이트 리디자인</p>
@@ -91,7 +90,7 @@
                     onClick="javascript:window.open('./mini/index.html','popup','width=400, height=700, top=100, left=100, scrollbars=no, resizable=no')">MOBILE</a>
             </div>
         </div>
-        <div class="frame-wrap">
+        <div class="frame-wrap" data-aos="fade-left" data-aos-duration="3000">
             <img src="img/desktop_shadow.png" alt="데스크탑 그림자" class="device-shadow">
             <img src="img/desktop.png" alt="데스크탑 프레임" class="device-frame">
             <div class="screen" style="background-image: url('img/mini_bg.png');">
@@ -104,7 +103,7 @@
 
     <!--nespresso-->
     <section>
-        <div class="frame-wrap">
+        <div class="frame-wrap" data-aos="fade-right" data-aos-duration="3000">
             <img src="img/desktop_shadow.png" alt="데스크탑 그림자" class="device-shadow">
             <img src="img/desktop.png" alt="데스크탑 프레임" class="device-frame">
             <div class="screen" style="background-image: url('img/nespresso_bg.png');">
@@ -113,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div class="project-info">
+        <div class="project-info" data-aos="fade-left" data-aos-duration="3000">
             <h2>Brand Redesign</h2>
             <h3>Nespresso</h3>
             <p>감성 중심 카드형 UI, 브랜딩 강조</p>
@@ -144,7 +143,7 @@
         <h2>Clone & Redesign Projects</h2>
         <p>실제 웹사이트를 클론하거나 브랜드 아이덴티티를 리디자인하며,<br>
         반응형 퍼블리싱, UI 구성, 사용자 흐름 등을 연습한 프로젝트 모음입니다.</p>
-        <div class="clone-grid">
+        <div class="clone-grid" data-aos="fade-up" data-aos-duration="3000">
             <div class="clone-block">
                 <h3>📌 Lotus / Fullpage Web</h3>
                 <div class="frame-wrap">
@@ -198,14 +197,21 @@
 
     <!--footer-->
     <footer>
-        <h3>감사합니다.<br>
-        사용자와 구조를 함께 생각하는 퍼블리셔 박민주였습니다.</h3>
-        <div class="foot-contact-links">
-            <p>✉️ mandumandum@naver.com</p>
-            <span>|</span>
-            <p>📞 010-8475-7515</p>
+        <div class="footer-content" data-aos="zoom-in" data-aos-duration="1000">
+            <h3>감사합니다.<br>
+            사용자와 구조를 함께 생각하는 퍼블리셔 박민주였습니다.</h3>
+            <div class="foot-contact-links">
+                <p>✉️ mandumandum@naver.com</p>
+                <span>|</span>
+                <p>📞 010-8475-7515</p>
+            </div>
         </div>
-        <p>© 2025 Minju Park. All rights reserved.</p>
+        <p class="copy">© 2025 Minju Park. All rights reserved.</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

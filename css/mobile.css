@@ -101,7 +101,7 @@
         font-size: 20px;
     }
     .clone-section>p{
-        font-size: 14px;
+        font-size: 13px;
         margin: 17px 0 30px;
     }
     .clone-block .view-button{
@@ -116,13 +116,13 @@
         height: auto !important;
         padding: 160px 0 20px;
     }
-    footer>h3{
+    .footer-content h3{
         font-size: 16px;
     }
     .foot-contact-links{
         font-size: 11px;
     }
-    footer>p{
+    footer> .copy{
         position: static;
         font-size: 11px;
         margin-top: 48px;
