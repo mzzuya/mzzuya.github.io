@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+@media (max-width: 700px) {
+    header{
+        height: 100px;
+    }
+    #gnb{
+        display: none;
+    }
+    #logo{
+        float: left;
+        padding: 0 10px;
+    }
+    #logo img{
+        width: 80px;
+    }
+    header{
+        height: 70px;
+    }
+
+
+    .ham{
+        display: block;
+    }
+
+    
+    .slide img{
+        height: 500px;
+    }
+
+    #sect01 .inner{
+        height: 650px;
+    }
+    .prev::after{
+        left: 25px;
+    }
+    .next::after{
+        right: 25px;
+    }
+    .sect01-info{
+        width: 90%;
+    }
+    .sect01-info h3{
+        font-size: 11px;
+    }
+    .sect01-info span{
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+
+    #sect02 h2{
+        padding: 0 0 50px;
+    }
+    #tab-button-nav{
+        width: 50%;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .sect02-wrapper{
+        width: 100%;
+        padding: 170px 0;
+    }
+    
+    .tab-section img{
+        height: 300px;
+    }
+    .sect02-info{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .sect02-info h3{
+        font-size: 20px;
+    }
+    .sect02-info p{
+        font-size: 13px;
+    }
+
+
+    #sect03 h2{
+        padding: 0 0 50px;
+    }
+    #sect03 .box{
+        width: 90%;
+        margin: auto;
+        display: block;
+        padding-bottom: 100px;
+    }
+    #sect03 .box:last-child{
+        padding-bottom: 0;
+    }
+    #sect03 .box .imgbox{
+        width: 100%;
+    }
+    #sect03 .box .textbox,
+    #sect03 .box .textbox1{
+        width: 70%;
+        margin: 0;
+        padding: 20px 0;
+    }
+    #sect03 .box .textbox1{
+        float: right;
+    }
+
+
+
+
+    #sect05 .box-wrapper{
+        width: 300px;
+        display: block;
+    }
+
+
+
+    .foot-nav{
+        display: none;
+    }
+    footer p{
+        position: absolute;
+        right: 0;
+    }
+
+}

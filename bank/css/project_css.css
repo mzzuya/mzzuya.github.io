@@ -1,0 +1,253 @@
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    * {
+        font-family: 'Pretendard', sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Pretendard', sans-serif;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tit {
+        display: flex;
+        align-items: center;
+        gap: 10px; 
+    }
+    .tit img {
+        width: 40px;
+    }
+    .tit p {
+        margin: 0; 
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    header button {
+        font-size: 16px;
+        border-radius: 8px;
+        width: 145px;
+        height: 50px;
+        cursor: pointer;
+    }
+    /**/
+    /* hover시 로그인 버튼으로 사용하자 */
+    /* .login_btn {
+        background-color: #6fa8ff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .login_btn:hover {
+        background-color: #4e92f9;
+    } */
+
+    /* 팝오버 로그인 폼 */
+    .popoverSection {
+        position: relative; /* 팝오버 기준점 */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    #logoutSection {
+        background-color: transparent;
+        border: 1px solid #459CFF;
+        color: #459CFF;
+        transition: background-color 0.3s ease;
+    }
+    #logoutSection:hover {
+        background-color: #459CFF;
+        color: white;
+    }
+
+    .login_btn {
+        background-color: #459CFF;
+        color: white;
+        border: none;
+    }
+    #loginSection {
+        position: absolute;
+        top: 100%;
+        /* 로그인 버튼 아래로 위치 */
+        right: 0;
+        background-color: #fff;
+        color: #459CFF;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        margin-top: 10px;
+        padding: 20px;
+        width: 250px;
+        z-index: 1000;
+    }
+
+
+    /* 로그인 제목 */
+    #loginSection h2 {
+        margin-top: 0;
+        font-size: 18px;
+        text-align: center;
+        color: #333;
+    }
+
+    /* 각 입력 라벨 및 필드 정리 */
+    #loginSection p {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    #loginSection input[type="email"],
+    #loginSection input[type="password"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    #loginSection input:focus {
+        outline: none;
+        border-color: #459CFF;
+        box-shadow: 0 0 0 2px rgba(69, 156, 255, 0.2);
+    }
+
+    /* 로그인 버튼 (팝오버 내) */
+    #loginSection button {
+        margin-top: 14px;
+        margin-bottom: 4px;
+        width: 100%;
+        padding: 10px 16px;
+        background-color: #6fa8ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    #loginSection button:hover {
+        background-color: #4e92f9;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    #loginSection label {
+        font-size: 14px;
+        color: #333;
+    }
+
+    /**/
+
+    .container {
+        width: 83%;
+        margin: 0 auto;
+        flex: 1;
+        /* footer 밀려나게 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainSection {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .mainSection h1 {
+        font-weight: bold;
+        ;
+    }
+
+    .itemList {
+        display: flex;
+        justify-content: space-between;
+        gap: 2%;
+        width: 100%;
+    }
+
+    .items {
+        border: 1px solid #c6dbf8;
+        border-radius: 12px;
+        width: 22%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .item-tit {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .items:hover {
+        background-color: #eef5ff;
+        color: #1a1a1a;
+        border-color: #459CFF;
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .items img {
+        width: 100px;
+        margin-bottom: 16px;
+    }
+
+    
+
+    .items p {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    footer {
+        border-top: 1px solid #E9E9E9;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #777;
+        background-color: #f9f9f9;
+    }

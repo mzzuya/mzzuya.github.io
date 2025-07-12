@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+    background-color: #F8F9FA;
+    font-family: 'Pretendard-Regular', sans-serif;
+    color: #1F1F1F;
+}
+a{
+    text-decoration: none;
+    color: #1F1F1F;
+    letter-spacing: 0.3px;
+}
+
+/*헤더*/
+header{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 8vw;
+    gap: 20px;
+}
+.intro>h1{
+    font-size: 64px;
+    font-weight: bold;
+}
+.intro>p{
+    font-size: 18px;
+    font-weight: lighter;
+}
+.intro>h2{
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.contact-links{
+    display: flex;
+}
+.contact-links span{
+    padding: 0 20px;
+    color: #D4A373;
+}
+.contact-links>a,.contact-links>p {
+    font-size: 16px;
+    color: #D4A373;
+}
+.contact-links>a{
+    cursor: pointer;
+}
+.scroll-icon{
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/*공통섹션*/
+section{
+    margin: auto;
+    width: 100%;
+    max-width: 1400px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8vw;
+    gap: 50px;
+}
+
+/*메인 프로젝트 프레임 공통*/
+.frame-wrap{
+    width: 50%;
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    flex: 1;
+}
+.device-frame {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.device-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 0;
+}
+
+/*모니터 호버*/
+.hover-overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.frame-wrap:hover .hover-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+}
+.screen {
+    position: absolute;
+    top: 2%;
+    left: 1.8%;
+    width: 97%;
+    height: 72%;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    z-index: 1;
+    overflow: hidden;
+}
+.view-button {
+    padding: 10px 20px;
+    border: 1.5px solid #2C3E50;
+    background-color: #fff;
+    color: #2C3E50;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view-button:hover {
+    background-color: #D4A373;
+    border-color: #D4A373;
+    color: #fff;
+}
+
+/*메인 프로젝트 텍스트 공통*/
+.project-info{
+    width: 50%;
+    max-width: 350px;
+}
+.project-info>h3{
+    color: #2C3E50;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.project-info>p{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.project-info li strong {
+    font-weight: bold;
+    color: #D4A373;
+    margin-right: 10px;
+}
+.project-info ul li {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 5px;
+}
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+.type-tag{
+    display: flex;
+    gap: 10px;
+}
+.type-tag>.btn{
+    display: inline-block;
+    border: 1.5px solid #2C3E50;
+    background-color: #FFF;
+    color: #2C3E50;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.type-tag>.btn:hover{
+    background-color: #D4A373;
+    border-color: #D4A373;
+    color: #FFF;
+}
+
+
+
+/*clone-section*/
+.clone-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4vw;
+    gap: 20px;
+}
+.clone-section>h2{
+    color: #2C3E50;
+    font-size: 28px;
+}
+.clone-section>p{
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+.clone-grid {
+    display: flex;
+    gap: 20px;
+}
+.clone-block .frame-wrap {
+    max-width: 420px;
+    width: 100%;
+}
+.clone-block .view-button{
+    font-size: 14px;
+}
+.clone-block .device-shadow{
+    bottom: -5px;
+}
+
+
+
+
+
+/*푸터*/
+footer{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 8vw;
+    gap: 20px;
+}
+footer>h3{
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.foot-contact-links{
+    display: flex;
+    font-size: 16px;
+    color: #D4A373;
+}
+.foot-contact-links>span{
+    padding: 0 20px;
+}
+footer>p{
+    position: absolute;
+    bottom: 50px;
+    color: #999;
+    font-size: 14px;
+}

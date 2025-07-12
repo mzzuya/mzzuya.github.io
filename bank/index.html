@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/project_css.css" />
+    <title>4조 팀프로젝트</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="tit">
+                <img src="img/logo.png">
+                <p>BankP</p>
+            </h1> <!-- 프로젝트 이름 들어가야됨, 일단 가제로 처리-->
+            <div class="popoverSection">
+                <button class="login_btn" onclick="PopoverAct()">
+                    LOGIN
+                </button>
+                <button id="logoutSection" style="display: none">LOGOUT</button>
+                <div id="loginSection" style="display: none;">
+                    <h2>LOGIN</h2>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@mail.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pw">Password</label>
+                        <input type="password" id="pw" />
+                    </div>
+                    <button>LOGIN</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="mainSection">
+                <h1 class="item-tit">금융 상품 선택</h1>
+                <div class="itemList">
+                    <a class="items" href="team-project_deposit.html">
+                        <img src="img/deposite.svg">
+                        <p>예금</p>
+                    </a>
+                    <a class="items" href="team-project_saving.html">
+                        <img src="img/saving.svg">
+                        <p>적금</p>
+                    </a>
+                    <a class="items" href="team-project_coin.html">
+                        <img src="img/VTAsset.svg">
+                        <p>비트코인</p>
+                    </a>
+                    <a class="items" href="team-project_fund.html">
+                        <img src="img/fund.svg">
+                        <p>펀드</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>ⓒ 2025 금융 서비스, All right reserved</p>
+    </footer>
+    <script>
+        // 팝오버 작동/해제
+        function PopoverAct() {
+            const popover = document.getElementById('loginSection');
+            const isVisible = popover.style.display === 'block';
+
+            popover.style.display = isVisible ? 'none' : 'block';
+        }
+        // 외부 클릭으로 팝오버 닫기
+        document.addEventListener('click', function (e) {
+            const popover = document.getElementById('loginSection');
+            const wrapper = document.querySelector('.popoverSection');
+            if (!wrapper.contains(e.target)) {
+                document.getElementById('loginSection').style.display = 'none';
+            }
+        })
+
+        // 로그인 기능
+        //이메일 동작
+        const API_BASE = 'https://683d0a9d199a0039e9e409f6.mockapi.io/api/BankP';
+
+        let user = null;
+
+        function login() {
+            const email = document.getElementById('email').value;
+            const pw = document.getElementById('pw').value;
+
+            fetch(API_BASE + '/users')
+                .then(function (res) {
+                    alert('계정정보 획득');
+                    return res.json();
+                })
+                .then(function (users) {
+                    alert('계정 정보 JSON으로 변환');
+                    console.log('사용자 정보 : ', users);
+
+                    for (let i = 0; i < users.length; i++) {
+                        if (users[i].userEmail === email && users[i].userPW === pw) {
+                            user = users[i];
+
+                            console.log('로컬 저장값 : ', user);
+
+                            localStorage.setItem('user', JSON.stringify(user));
+
+                            alert('로그인 성공');
+
+                            document.getElementById('loginSection').style.display = 'none';
+                            document.getElementsByClassName('login_btn')[0].style.display = 'none';
+                            document.getElementById('logoutSection').style.display = 'block';
+
+                            return;
+                        }
+                    }
+                    alert('계정 정보가 일치하지 않습니다');
+                });
+        }
+        // 로그인 작동
+        document.querySelector('#loginSection button').onclick = login;
+
+        // 로그아웃 기능 구현
+        function logout() {
+            localStorage.removeItem('user');
+            user = null;
+            alert('로그아웃 성공');
+
+            //로그아웃버튼 사라지고 로그인 섹션 등장
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('logoutSection').style.display = 'none';
+        }
+        // 로그아웃 작동
+        document.querySelector('#logoutSection').onclick = logout;
+    </script>
+</body>
+
+</html>

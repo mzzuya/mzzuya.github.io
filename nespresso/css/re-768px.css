@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+@media all and (max-width: 767px){
+
+    header{
+       position: absolute;
+    }
+    header #gnb{
+        display: none;
+    }
+    header .active{
+        display: none;
+    }
+    header .inner{
+        width: 100%;
+    }
+    header .etc{
+        right: 5%;
+    }
+    .btn{
+        display: block;
+    }
+
+
+
+    #main-visual .slide-wrap{
+        width: 100%;
+        height: 50vh;
+    }
+    #main-visual .slide img{
+        width: 100%;
+        height: 50vh;
+    }
+    #main-visual .slide .inner{
+        width: 90%;
+        top: 50%;
+    }
+    #main-visual .slide .inner h1{
+        font-size: 22px;
+    }
+    #main-visual .slide .inner p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    #main-visual .slide .inner span{
+        width: 80px;
+        font-size: 9px;
+    }
+
+
+
+
+    #sect01{
+        display: block;
+        padding: 60px 0;
+    }
+    #sect01 .text-info{
+        width: 60%;
+        margin: auto;
+    }
+    #sect01 .text-info h1{
+        font-size: 20px;
+    }
+    #sect01 .text-info p{
+        font-size: 11px;
+        padding: 20px 0 40px;
+        line-height: 20px;
+    }
+    #sect01 .slide-wrapper{
+        width: 90%;
+        margin: auto;
+    }
+    #sect01 .slide-wrapper .cont .info h1{
+        font-size: 13px;
+    }
+    #sect01 .slide-wrapper .cont .info p{
+        font-size: 10px;
+    }
+    #sect01 .slide-wrapper .cont .info span{
+        font-size: 9px;
+        padding: 3px 5px;
+    }
+    
+
+    #sect02 .inner{
+        padding: 80px 0;
+    }
+    #sect02 .info{
+        width: 60%;
+        margin: auto 5%;
+    }
+    #sect02 .info h3{
+        font-size: 13px;
+    }
+    #sect02 .info h1{
+        font-size: 20px;
+    }
+    #sect02 .info p{
+        font-size: 12px;
+    }
+    #sect02 .bg{
+        background-position: 55%;
+    }
+
+
+
+    #sect03 .inner{
+        display: block;
+        width: 80%;
+    }
+    #sect03 .inner img{
+        width: 100%;
+    }
+    #sect03 .inner .info{
+        width: 100%;
+        padding: 5% 0 0;
+    }
+    #sect03 .info h2{
+        font-size: 13px;
+    }
+    #sect03 .info h1{
+        font-size: 20px;
+    }
+    #sect03 .info h3{
+        font-size: 12px;
+    }
+    #sect03 .info h5{
+        font-size: 9px;
+    }
+    #sect03 .info span{
+        width: 80px;
+        font-size: 9px;
+    }
+
+
+
+
+    #sect04 .inner{
+        width: 80%;
+    }
+    #sect04 .inner>h1{
+        width: 70%;
+        margin: auto;
+        font-size: 20px;
+    }
+    #sect04 .tab__item a{
+        font-size: 10px;
+    }
+
+    #sect04 .tab__content{
+        width: 100%;
+        height: auto;
+    }
+    #sect04 .tab__content-wrapper{
+        padding: 0 0 60px;
+    }
+    #sect04 .tab{
+        display: block;
+        width: 40%;
+        text-align: center;
+    }
+    #sect04 .tab__item.active{
+        display: block;
+    }
+    #sect04 .tab li{
+        margin: 7px 0;
+    }
+    #sect04 .cont_box{
+        display: block;
+        padding: 0;
+    }
+    #sect04 .box{
+        width: 100%;
+        margin: 30px 0px;
+    }
+    #sect04 .tab3-box{
+        width: 100%;
+        margin: 30px 0px;
+    }
+
+
+    #sect05 .inner{
+        width: 70%;
+        padding: 70px 0;
+    }
+    #sect05 .info h1{
+        font-size: 20px;
+    }
+    #sect05 .info p{
+        font-size: 12px;
+    }
+    
+
+
+    footer .foot-nav{
+        display: none;
+    }
+    footer .inner{
+        width: 100%;
+    }
+    footer .foot-info{
+        width: 100%;
+        text-align: center;
+        padding: 3% 0;
+    }
+    footer .foot-info p{
+        display: none;
+    }
+}

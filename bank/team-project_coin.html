@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/project_library.css" />
+    <link rel="stylesheet" href="css/project_coin.css">
+
+  </head>
+  <body>
+      <header class="header">
+        <div class="nav-left">
+          <a style="text-decoration: none;" href="index.html">
+            <span>&larr; HOME</span>
+
+          </a>
+        </div>
+        <div class="nav-right">
+            <button class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <main class="container">
+      <section class="main-section">
+        <div class="mainSec-title">코인</div>
+        <canvas id="coinChart" width="800" height="400"></canvas>
+        <section class="form-section">
+                <h2>코인 정보 입력하기</h2>
+          <form class="form">
+              <input class="coin_name" type="text" placeholder="코인 이름" required />
+              <input class="date" type="date" placeholder="시작 날짜" required />
+              <input class="coin_price" type="number" placeholder="코인 금액" required />
+              <input class="coin_total" type="number" placeholder="코인 개수" required />
+
+              <!-- <div class="row">
+                  <input type="text" placeholder="출처 기관(은행)" />
+                  <input type="text" placeholder="적용 금리 입력" />
+              </div>
+              <div class="row">
+                  <input type="text" placeholder="이자 입금 계좌" />
+                  <input type="text" placeholder="계좌번호" />
+              </div> -->
+              <button type="submit" class="submit-btn">구매 하기</button>
+          </form>
+        </section>
+
+        <section class="list-section">
+            <h3 class="email">나의 코인 내역</h3>
+            <div class="list-nav">
+              <div>코인 이름</div>
+              <div>코인 가격</div>
+              <div>코인 개수</div>
+              <div>코인 합계</div>
+              <div>수정/판매</div>
+            </div>
+
+            <div class="deposit-list">
+
+            </div>
+        </section>
+
+
+      </section>
+
+      <section class="coin-section form-section ">
+        <ul class="coinList">
+          <!-- <button onclick="getCoin()">코인 가져오기</button> -->
+        </ul>
+      </section>
+    </container>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+      // 서버 주소
+      const API_USER =
+          "https://683d5917199a0039e9e51193.mockapi.io/api/BankP/coin/";
+
+      // 스토리지의 계정 정보
+      const userStrorage = localStorage.getItem("user")
+      const userObj = JSON.parse(userStrorage);
+
+
+      // 계정 서버에서 읽기, 갱신, 삭제 (Read Update Deleate)
+      async function getAccount() {
+        const list = document.querySelector(".list-section")
+        const depositList = document.querySelector(".deposit-list")
+
+        const accountRes = await fetch(API_USER + "user");
+        const accountData = await accountRes.json();
+
+        if (!userObj) {
+                alert('로그인이 필요합니다');
+                location.href = 'index.html';
+                return;
+            }
+        {
+          // 계정에 맞는 코인 가져오기
+          for (let i = 0; i < accountData.length; i++) {
+            if (userObj.userEmail === accountData[i].user_email) {
+              const userRes = await fetch(API_USER + "user?user_email=" + accountData[i].user_email)
+              const userDate = await userRes.json();
+              
+              document.querySelector(".email").innerText = `${userDate[0].user_email} 의 코인 내역`
+
+              depositList.innerHTML = ""; // 초기화
+              
+              for (let i = 0; i < userDate.length; i++) {
+                const e = userDate[i];
+                
+                const item = document.createElement("div");
+                item.className = "deposit-item deposit-card";
+                item.innerHTML = `
+                  <div class="info">
+                    <p>${e.coin_name}</p>
+                    <p>2025.06.01</p>
+                  </div>
+                  <div class="amount">${e.coin_price}USD</div>
+                  <div class="amount">${e.coin_total}개</div>
+                  <div class="amount">${e.coin_price * e.coin_total}USD</div>
+                  <div class="actions">
+                    <button class="edit-btn btn-g">수정</button>
+                    <button class="delete-btn btn-r">팔기</button>
+                    </div>`;
+                    
+                    depositList.appendChild(item);
+                    
+                    // 코인 개수 수정
+                const editBtn = item.querySelector(".edit-btn");
+                async function editCoin (id, coin_total) {
+                  const newAmount = prompt("코인을 판매/구매 해주세요", coin_total)
+
+                  if (!newAmount) return;
+                  const url = API_USER + "user/" + e.id
+                  const editRes = await fetch(url, {
+                    method : "PUT",
+                    headers : {"Content-Type" : "application/json"},
+                    body : JSON.stringify({coin_total: +newAmount})
+                  })
+
+                  location.reload()
+                }
+                // 갱신 이벤트
+                editBtn.addEventListener("click", () => editCoin(e.id, e.coin_total));
+
+                // 코인 판매
+                const sellBtn = item.querySelector(".delete-btn");
+                async function sellCoin (id) {
+
+                const url = API_USER + "user/" + e.id
+                const editRes = await fetch(url, {
+                  method : "DELETE",  
+                })
+
+                  location.reload()
+                }
+                // 삭제 이벤트
+                sellBtn.addEventListener("click", () => sellCoin(e.id));
+              }
+            }
+          }
+        }
+      }
+      // 계정 받아오기 실행
+      getAccount();
+
+      // 코인 구매해서 서버 보내기 (Create)
+      const form = document.querySelector(".form")
+      async function buyCoin (e, userObj) {
+        e.preventDefault();
+
+        const data = {
+          user_email : userObj.userEmail,
+          coin_name : document.querySelector(".coin_name").value,
+          coin_price : document.querySelector(".coin_price").value,
+          coin_total : document.querySelector(".coin_total").value
+        }
+
+        const coinRes = await fetch(API_USER + "user", {
+          method: "POST",
+          headers: {"Content-Type" : "application/json"},
+          body : JSON.stringify(data)
+        })
+
+        if (!coinRes.ok) {
+          alert("코인 구매 실패! 다시 시도해주세요.");
+          return;
+        }
+        
+        const coinData = await coinRes.json()
+        console.log(coinData);
+        alert("구매완료 되었습니다")
+
+        location.reload();
+      }
+      // 코인 구매 실행
+      form.addEventListener("submit", (e) => buyCoin(e, userObj))
+
+
+      // 차트 초기화
+      let chartInstance = null;
+      //  차트정보 가져오기
+      async function drawCoinChart(coinId) {
+        const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=365`;
+
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          const prices = data.prices;
+
+          const labels = [];
+          const values = [];
+
+          let lastMonth = null;
+
+          for (const [timestamp, price] of prices) {
+            const date = new Date(timestamp);
+            const month = date.getMonth();
+            const day = date.getDate();
+
+            // 매달 1일만 추가
+            if (day === 1 && month !== lastMonth) {
+              labels.push(`${date.getFullYear()}/${month + 1}`);
+              values.push(price);
+              lastMonth = month;
+            }
+          }
+
+          //   캔버스에 그린다고 말하기
+          const ctx = document.getElementById("coinChart").getContext("2d");
+
+          // 기존 차트가 있다면 제거
+          if (chartInstance !== null) {
+            chartInstance.destroy();
+          }
+
+          // 차트 그리기
+          chartInstance = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: `${coinId} 월별 가격 (USD)`,
+                  data: values,
+                  borderColor: "#3085f4",
+                  backgroundColor: "rgba(65, 112, 170, 0.5",
+                  fill: true,
+                  tension: 0.3,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    // text: "월",
+                  },
+                },
+                y: {
+                  title: {
+                    display: true,
+                    // text: "가격 ($)",
+                  },
+                },
+              },
+            },
+          });
+        } catch (err) {
+          console.error("그래프 로딩 실패", err);
+        }
+      }
+      //  차트 바로 실행
+      drawCoinChart("bitcoin");
+      //   코인 api
+      async function getCoin() {
+        const coinList = document.querySelector(".coinList");
+        const res = await fetch(
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1"
+        );
+        const data = await res.json();
+        
+        coinList.innerHTML = ``
+        for (let i = 0; i < 50; i++) {
+          const coin = document.createElement("li");
+          
+
+          coin.innerHTML = `
+                    <div>
+                    <p>${i + 1}</p>
+                    <img src = ${data[i].image}
+                    }.png>
+                    <p class="name">${data[i].name} </p>
+                    </div>
+                    <div>${Number(
+                      data[i].current_price.toFixed(2)
+                    ).toLocaleString()} USD</div>
+                    `;
+
+          coinList.appendChild(coin);
+
+          const coinName = coin.querySelector(".name");
+          coinName.addEventListener("click", () => {
+
+            drawCoinChart(data[i].id);
+
+            document.querySelector(".coin_name").value = data[i].name;
+            document.querySelector(".coin_price").value = data[i].current_price.toFixed(0)
+          });
+        }
+      }
+      getCoin()
+      // 로그아웃
+      function sideLogout() {
+        const logout = document.querySelector(".logout-btn")
+
+        logout.addEventListener("click", () => {
+          localStorage.removeItem('user');
+
+          alert("로그아웃 되셨습니다")
+          location.href = "index.html"
+        })
+      }
+      // 로그아웃 실행
+      sideLogout()
+
+
+
+
+   </script>
+  </body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nespresso redesign</title>
+
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/re-1280px.css">
+    <link rel="stylesheet" href="css/re-1024px.css">
+    <link rel="stylesheet" href="css/re-768px.css">
+
+
+    <script src="script/jquery-1.12.3.js"></script>
+    <script src="script/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <script>
+        AOS.init();
+    </script>
+
+    <header>
+        <div class="inner">
+            <nav id="gnb">
+                <ul class="navi">
+                    <li><a href="nespresso_coffee.html">커피</a></li>
+                    <li><a href="#">머신</a></li>
+                    <li><a href="#">액세서리</a></li>
+                    <li><a href="#">고객서비스</a></li>
+                </ul>
+            </nav>
+
+            <div id="logo">
+                <img src="img/logo.png" alt="로고">
+            </div>
+
+            <div class="etc">
+                <ul>
+                    <li><a href="#"><img src="img/search_icon.png" alt="검색"></a></li>
+                    <li><a href="#"><img src="img/cart_icon.png" alt="카트"></a></li>
+                    <li><a href="#"><img src="img/user_icon.png" alt="유저"></a></li>
+                </ul>
+            </div>
+
+            <div class="btn"></div>
+            <div onclick="history.back();" class="page_cover"></div>
+
+            <div id="menu">
+                <ul class="nav">
+                    <li><a href="nespresso_coffee.html">커피</a></li>
+                    <li><a href="#">머신</a></li>
+                    <li><a href="#">액세서리</a></li>
+                    <li><a href="#">고객서비스</a></li>
+                </ul>
+                <div onclick="history.back();" class="close"></div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="main-visual">
+        <div class="slide-wrap">
+            <div class="slide">
+                <img src="img/main1.jpeg" alt="main">
+                <div class="inner text01">
+                    <h1>자연으로부터 얻는 잊지 못할 커피 경험</h1>
+                    <p>네스프레소는 농부들과 협력하여 기후 변화의 영향을 극복하고,<br>잊지 못할 커피 경험을 지키기 위해 노력하고 있습니다.</p>
+                    <span>더 알아보기</span>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/main3.jpg" alt="main">
+                <div class="inner text02">
+                    <h1>온전한 쓰임을 위한 최선의 노력</h1>
+                    <p>최소한의 사용, 최대한의 순환.<br>네스프레소는 커피 캡슐 재활용을 통해 환경에 미치는 영향을 최소화 하고 있습니다.</p>
+                    <span>더 알아보기</span>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/main5.png" alt="main">
+                <div class="inner text03">
+                    <h1>소중한 자원, 낭비할 순 없으니까!</h1>
+                    <p>네스프레소에서는 커피 한 잔을 완성하는데 필요한 최적량의<br>물, 에너지, 커피 원두만을 사용하도록 설계되어, 자원 낭비를 줄입니다.</p>
+                    <span>더 알아보기</span>
+                </div>
+            </div>
+        </div>
+    </div><!--main-visual-->
+
+
+
+
+    <div id="sect01">
+        <div class="text-info"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            data-aos-once="true">
+            <h1>네스프레소의 지속가능한 혁신</h1>
+            <p>
+                네스프레소 커피의 여정은 커피 한 잔의 마지막 한모금에서 끝나지 않습니다. 사용된 캡슐을 재활용하거나 커피 가루를 가정용 비료로 만들어 사용하면 자원 낭비와 커피 한 잔의 탄소 발자국을 줄일 수 있습니다.<br><br>
+                네스프레소는 재활용할 때 사용한 커피 가루와 알루미늄 캡슐을 분리합니다. 분리된 커피 가루는 농장의 거름과 바이오매스 연료로, 알루미늄은 생활용품 등으로 재활용됩니다.
+            </p>
+        </div>
+        
+        <div class="slide-wrapper">
+            <div class="sect01-wrap">
+                <div class="cont">
+                    <img src="img/slide1.jpeg" alt="슬라이드">
+                    <div class="info">
+                        <h1>자연과 함께하는 삶</h1>
+                        <p>네스프레소의 AAA 프로그램을 통해 농부들은 자연과 공존하며 고품질 커피를 재배하는 동시에 환경적, 경제적 회복력을 키우고 있습니다.</p>
+                        <span>AAA 프로그램 알아보기</span>
+                    </div>
+                </div>
+
+                <div class="cont">
+                    <img src="img/slide2.jpeg" alt="슬라이드">
+                    <div class="info">
+                        <h1>새로운 가치로 다시 탄생하는 커피</h1>
+                        <p>네스프레소 코리아는 사용된 커피 캡슐을 새로운 가치로 활용하기 위해 다양한 캠페인을 진행하고 있습니다. 지난 프로그램들을 살펴보세요.</p>
+                        <span>재활용 프로그램 알아보기</span>
+                    </div>
+                </div>
+
+                <div class="cont">
+                    <img src="img/slide3.jpeg" alt="슬라이드">
+                    <div class="info">
+                        <h1>사용한 커피 캡슐 재활용하기</h1>
+                        <p>네스프레소는 2011년부터 커피 캡슐 재활용 프로그램을 운영하고 있습니다. 재활용 백을 장바구니에 담아 환경 보호에 동참해주세요.</p>
+                        <span>재활용 백 신청하기</span>
+                    </div>
+                </div>
+
+                <div class="cont">
+                    <img src="img/slide4.jpeg" alt="슬라이드">
+                    <div class="info">
+                        <h1>새로운 가치로 다시 탄생하는 커피</h1>
+                        <p>네스프레소 코리아는 사용된 커피 캡슐을 새로운 가치로 활용하기 위해 다양한 캠페인을 진행하고 있습니다. 지난 프로그램들을 살펴보세요.</p>
+                        <span>재활용 프로그램 알아보기</span>
+                    </div>
+                </div>
+
+                <div class="cont">
+                    <img src="img/slide5.jpeg" alt="슬라이드">
+                    <div class="info">
+                        <h1>다시 태어나는 커피</h1>
+                        <p>커피 생산 과정에서 버려지는 커피 생두 껍질이 재활용되어 루프 컬렉션으로 재탄생했습니다. 네스프레소는 수명이 다한 제품이 다시 새로운 제품으로 업사이클 되도록 자원의 선순환을 위해 노력을 기울입니다.</p>
+                        <span>루프 컬렉션 살펴보기</span>
+                    </div>
+                </div>
+
+                <div class="cont">
+                    <img src="img/slide6.jpeg" alt="슬라이드">
+                    <div class="info">
+                        <h1>알루미늄 캡슐 재활용</h1>
+                        <p>우리의 알루미늄 캡슐은 최상의 커피 맛을 보존할 뿐만 아니라 80% 재활용 소재로 만들어집니다. 알루미늄은 무한히 재활용될 수 있고, 새로운 가치를 가진 제품으로 다시 태어납니다. 당신의 네스프레소 모먼트는 마지막 한 모금에서 다시 시작됩니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <span class="prev"><img src="img/arrow_circle_left.png" alt="arrow"></span>
+            <span class="next"><img src="img/arrow_circle_right.png" alt="arrow"></span>
+        </div><!--sect01-->
+    </div>
+
+
+
+
+    <div id="sect02">
+        <div class="bg">
+            <div class="inner">
+                <div class="info"
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
+                    data-aos-once="true">
+                    <h3>네스프레소 프로페셔널이 소개하는 이달의 커피</h3>
+                    <h1>클래식 | 포르테 엑스트라</h1>
+                    <p>부드러운 맥아 시리얼향과 달콤한 캐러멜향이 조화를 이루는 포르테 엑스트라 커피를 소개합니다.<br><br>포르테 엑스트라 커피는 네스프레소 프로페셔널의 베스트 셀러 커피인 포르테에서 영감을 받은 커피로 포르테 커피 보다 약 60%의 카페인이 더 함유 된 커피 입니다.<br><br>​강력한 포르테 엑스트라 커피로 오피스, 호텔, 레스토랑에서 나의 아침을 깨워보세요.</p>
+                </div>
+            </div>
+        </div>
+    </div><!--sect02-->
+
+
+
+
+    <div id="sect03">
+        <div class="bg">
+            <div class="inner">
+                <img src="img/payback.jpeg" alt="img" data-aos="fade-right" data-aos-duration="2000" data-aos-once="true">
+                <div class="info"
+                    data-aos="fade-left"
+                    data-aos-duration="2000"
+                    data-aos-once="true">
+                    <h2>머신 100% 페이백</h2>
+                    <h1>홀리데이를 위한 특별한 혜택</h1>
+                    <h3>1. 에센자 미니 & 시티즈 & 시티즈 플래티넘 4만원 즉시 할인<br>
+                        2. 버츄오 or 오리지널 페이백 머신 구매 시, 어드벤트 캘린더 30% 할인<br>
+                        3. 버츄오 페이백 머신 구매 시, 캡슐 스테이션 2만원 할인<br>
+                        NEW 버츄오 팝+ 최대 100% 할인과 다양한 할인 혜택으로 홀리데이의 설렘을 느껴보세요!
+                    </h3>
+                    <h5>※ 기존 페이백 머신을 구매하신 고객은 페이백 혜택을 함께 받으실 수 없습니다.<br>
+                        ※ 주문 건 당 할인 혜택은 동일 주문 내 1회만 적용됩니다.
+                    </h5>
+                    <span>혜택받기</span>
+                </div>
+            </div>
+        </div>
+    </div><!--sect03-->
+
+
+
+    <div id="sect04">
+        <div class="inner">
+            <h1>네스프레소에서 선보이는 다양한 레시피를 만나보세요</h1>
+            <ul class="tab"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true">
+                <li class="tab__item active">
+                    <a href="#">버츄오</a>
+                </li>
+                <li class="tab__item">
+                    <a href="#">오리지널</a>
+                </li>
+                <li class="tab__item">
+                    <a href="#">VIEW ALL</a>
+                </li>
+            </ul>
+
+
+            <div class="tab__content-wrapper">
+                <div id="tab1" class="tab__content active">
+                    <div class="cont_wrap">
+                        <div class="cont_box"
+                            data-aos="fade-up"
+                            data-aos-duration="2000"
+                            data-aos-once="true">
+                            <div class="box">
+                                <a href="#"><img src="img/recipe1.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Butter Almond Croissant Cappuccino</h1>
+                                    <h3>버터 아몬드 크루아상 카푸치노</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe2.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Lemon Shakerato</h1>
+                                    <h3>레몬 샤케라토</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe3.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Creamy Peanut&sesame Reverso Latte</h1>
+                                    <h3>깨땅콩 크림 리버소 라테</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe4.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Almond Croissant Jelly & Cream</h1>
+                                    <h3>아몬드 크루아상 젤리 앤 크림</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe5.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Pumpkin</h1>
+                                    <h3>호박 크림 커피</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cont_box"
+                            data-aos="fade-up"
+                            data-aos-duration="2000"
+                            data-aos-once="true">
+                            <div class="box">
+                                <a href="#"><img src="img/recipe6.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Sujung Milk Coffee</h1>
+                                    <h3>수정 밀크 커피</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe7.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Peppermint chocolate coffee</h1>
+                                    <h3>박하 초코 커피</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe8.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>SALTED CARAMEL LATTE</h1>
+                                    <h3>솔티드 캐러맬 라떼</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe9.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Ruby Orange Bianco</h1>
+                                    <h3>루비 오렌지 비앙코</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe10.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>Espresso Chocolat</h1>
+                                    <h3>에스프레소 쇼콜라</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--tab1-->
+
+
+                <div id="tab2" class="tab__content">
+                    <div class="cont_wrap">
+                        <div class="cont_box">
+                            <div class="box">
+                                <a href="#"><img src="img/recipe11.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>COCO RICH WHITE</h1>
+                                    <h3>코코 리치 화이트</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe12.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>ICED GRAPEFRUIT ESPRESSO</h1>
+                                    <h3>아이스 자몽프레소</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe13.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>MAZAGRAN</h1>
+                                    <h3>마자그랑</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe14.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>MATCHA LATTE</h1>
+                                    <h3>말차 라떼</h3>
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <a href="#"><img src="img/recipe15.jpeg" alt="레시피"></a>
+                                <div class="box-text">
+                                    <h1>GRAPEFRUIT ESPRESSO</h1>
+                                    <h3>자몽 에스크레소 아이스티</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--tab2-->
+
+
+                <div id="tab3" class="tab__content">
+                    <div class="cont_wrap">
+                        <div class="cont_box">
+                            <div class="tab3-box">
+                                <p>더 많은 버츄오 레시피를 검색해 보세요</p>
+                                <div class="search"><img src="img/search_icon.png" alt="search"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--tab3-->
+            </div><!--tab__content-wrapper-->
+        </div><!--inner-->
+    </div><!--sect04-->
+
+
+
+
+    <div id="sect05">
+        <div class="bg">
+            <div class="inner">
+                <div class="info">
+                    <h1>REDUCE, REUSE, RECYCLE</h1>
+                    <p>네스프레소의 머신과 액세사리는 재활용 소재로 만든 친환경 패키지로 포장되어있습니다.<br>종이와 컬러 인쇄의 사용을 최소화하여 탄소 발자국을 줄이는 데 도움이 될 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </div><!--sect05-->
+
+
+
+    <footer>
+        <div class="inner">
+            <div class="foot-nav">
+                <ul>
+                    <li><a href="#">네스프레소 소개</a>
+                        <ul class="submenu">
+                            <li><a href="#">네스프레소의 약속</a></li>
+                            <li><a href="#">재활용</a></li>
+                            <li><a href="#">매장 찾기</a></li>
+                            <li><a href="#">채용</a></li>
+                            <li><a href="#">네스프레소 프로페셔널</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">자주하는 질문(FAQ)</a></li>
+                            <li><a href="#">네스프레소 서비스</a></li>
+                            <li><a href="#">머신 사용 안내</a></li>
+                            <li><a href="#">결제 영수증 출력</a></li>
+                            <li><a href="#">배송 조회</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">문의하기</a>
+                        <ul class="submenu">
+                            <li><a href="#">라이브 챗</a></li>
+                            <li><a href="#">국내 전화</a></li>
+                            <li><a href="#">국제 전화</a></li>
+                            <li><a href="#">이메일</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--foot-nav-->
+
+            <div class="foot-info">
+                <p>상 호 : 네슬레코리아 유한책임회사    대표자 : 토마스제프리카소<br>사업자등록번호 : 110-86-10100   주소 : 서울시 서대문구 충정로70 웨스트게이트타워 16층</p>
+                <span>Nestlé Nespresso S.A. 2024</span>
+            </div>
+        </div><!--inner-->
+    </footer>
+</body>
+</html>

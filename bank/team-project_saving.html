@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>적금</title>
+    <link rel="stylesheet" href="css/project_css.css" />
+    <link rel="stylesheet" href="css/project_saving.css" />
+    <link rel="stylesheet" href="css/project_library.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav-left">
+        <a href="index.html">&larr; HOME</a>
+      </div>
+      <div class="popoverSection">
+        <!-- 로그인 버튼 -->
+        <button class="login_btn" id="loginButton" onclick="PopoverAct()">
+          로그인
+        </button>
+        <!-- 로그아웃 버튼 -->
+        <button id="logoutSection" style="display: none">LOGOUT</button>
+        <!-- 로그인 창 -->
+        <div id="loginSection" style="display: none">
+          <h2>로그인</h2>
+          <p>
+            이메일 :
+            <input type="email" id="email" />
+          </p>
+          <p>
+            비밀번호 :
+            <input type="password" id="pw" />
+          </p>
+          <button>로그인</button>
+        </div>
+      </div>
+    </header>
+
+    <h2>적금 개설</h2>
+
+    <div id="addSection">
+      <h2 class="section-title">예금 정보 입력하기</h2>
+
+      <div class="start-date-section">
+        <div>
+          <img src="./img/calendar.svg" alt="" />
+          시작일 설정
+        </div>
+        <input type="date" id="start_date" onchange="setStartDate()" />
+      </div>
+      <!-- 만기일 설정 -->
+
+      <div class="maturity-date-section">
+        <div>
+          <img src="./img/calendar.svg" alt="" />
+          만기일 설정
+        </div>
+        <input type="date" id="maturity_date" onchange="calculatePeriod()" />
+        <!-- 금리 -->
+      </div>
+
+      <div class="interest-rate-section">
+        <img src="./img/interest.svg" style="width: 24px" alt="" />
+        금리
+        <span onclick="openInterestRate()" id="interest-rate">(금리 안내)</span>
+        <span id="interest">2.95</span>%
+      </div>
+
+      <div id="interest-rate-notice">
+        <div>6개월 이상 12개월 미만 : 2.95%</div>
+        <div>12개월 이상 24개월 미만: 3.10%</div>
+        <div>24개월 이상 36개월 이하: 2.80%</div>
+      </div>
+
+      <div class="savings-cycle-section">
+        <div>
+          <img src="./img/cycle.svg" alt="" style="width: 24px" />
+          <label for="savingsCycle">적금 주기</label>
+        </div>
+        <select id="savingsCycle" onchange="calculatePeriod()">
+          <option disabled selected>적금 주기를 선택하세요</option>
+          <option value="매월 1일">매월 1일</option>
+          <option value="매월 10일">매월 10일</option>
+          <option value="매월 15일">매월 15일</option>
+          <option value="메월 20일">매월 20일</option>
+          <option value="매월 말일">매월 말일</option>
+        </select>
+      </div>
+
+      <div class="amount-section">
+        <div>
+          <img src="./img/amount.svg" alt="" />
+          금액: <span id="amountDisplay">0</span> 원
+        </div>
+        <input
+          type="number"
+          id="savings_amount"
+          oninput="updateAmountDisplay()"
+        />
+      </div>
+
+      <button class="submit-btn" onclick="addSaving()">추가</button>
+    </div>
+
+    <h2>적금 내역 리스트</h2>
+    <div class="savingsListSection">
+      <ul id="savingsList"></ul>
+    </div>
+
+    <footer>
+      <p>© 2025 금융 서비스. All rights reserved.</p>
+    </footer>
+    <script>
+      const LOGIN_API_BASE =
+        "https://683d0a9d199a0039e9e409f6.mockapi.io/api/BankP";
+      const SAVING_API_BASE =
+        "https://683933fe6561b8d882af5b61.mockapi.io/api/v1";
+      // 팝오버 작동/해제
+      function PopoverAct() {
+        const popover = document.getElementById("loginSection");
+        const isVisible = popover.style.display === "block";
+
+        popover.style.display = isVisible ? "none" : "block";
+      }
+      // 외부 클릭으로 팝오버 닫기
+      document.addEventListener("click", function (e) {
+        const popover = document.getElementById("loginSection");
+        const wrapper = document.querySelector(".popoverSection");
+        if (!wrapper.contains(e.target)) {
+          document.getElementById("loginSection").style.display = "none";
+        }
+      });
+
+      // 로그인 기능
+      let user = null;
+      function login() {
+        const email = document.getElementById("email").value;
+        const pw = document.getElementById("pw").value;
+
+        fetch(`${LOGIN_API_BASE}/users`)
+          .then((res) => res.json())
+          .then((users) => {
+            const found = users.find(
+              (u) => u.userEmail === email && u.userPW === pw
+            );
+            if (found) {
+              user = found;
+              localStorage.setItem("user", JSON.stringify(user));
+              alert("로그인 성공");
+
+              document.getElementById("loginSection").style.display = "none";
+              document.getElementById("logoutSection").style.display = "block";
+              document.getElementById("loginButton").style.display = "none";
+
+              loadSavings();
+            } else {
+              alert("계정 정보가 일치하지 않습니다");
+            }
+          })
+          .catch(() => alert("서버 오류로 로그인 실패"));
+      }
+              // 로그인 검증함수
+        function isLogin(user) {
+            if (!user) {
+                alert('로그인이 필요합니다');
+                location.href = 'index.html';
+                return;
+            }
+        }
+
+      // 페이지 로드 시 로그인 상태 유지
+      window.onload = function () {
+        const savedUser = localStorage.getItem("user");
+        isLogin(savedUser);
+        
+        if (savedUser) {
+          user = JSON.parse(savedUser);
+          document.getElementById("loginSection").style.display = "none";
+          document.getElementById("logoutSection").style.display = "block";
+          loadSavings();
+          // document.getElementById("loginSection").style.display = "block";
+          // document.getElementById("logoutSection").style.display = "none";
+          document.getElementById("loginButton").style.display = "none";
+          // document.getElementById("logoutSection").style.display = "none";
+        }
+      };
+      // 로그인 작동
+      document.querySelector("#loginSection button").onclick = login;
+
+      // 로그아웃 기능 구현
+      function logout() {
+        localStorage.removeItem("user");
+        user = null;
+        alert("로그아웃 성공");
+        document.getElementById("savingsList").innerHTML = "";
+
+        //로그아웃버튼 사라지고 로그인 섹션 등장
+        document.getElementById("loginButton").style.display = "block";
+        document.getElementById("loginSection").style.display = "block";
+        document.getElementById("logoutSection").style.display = "none";
+      }
+      // 로그아웃 작동
+      document.querySelector("#logoutSection").onclick = logout;
+
+      //금리 안내 내용
+      function openInterestRate() {
+        const notice = document.getElementById("interest-rate-notice");
+        if (notice.style.display === "block") {
+          notice.style.display = "none";
+        } else {
+          notice.style.display = "block";
+        }
+      }
+
+      // 만기일 기본을 오늘로부터 6개월 뒤로 설정
+      let sixMonthsLater;
+
+      function setStartDate() {
+        const startDate = new Date(document.getElementById("start_date").value);
+        sixMonthsLater = new Date(
+          new Date(startDate.setMonth(startDate.getMonth() + 6))
+        );
+        document.getElementById("maturity_date").value = sixMonthsLater
+          .toISOString()
+          .split("T")[0];
+        return startDate;
+      }
+
+      // 적금 기간 계산 기능
+      function calculatePeriod() {
+        const oneYearLater = new Date(
+          new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+        ).setHours(12, 0, 0, 0);
+        const twoYearsLater = new Date(
+          new Date(new Date().setFullYear(new Date().getFullYear() + 2))
+        ).setHours(12, 0, 0, 0);
+        const threeYearsLater = new Date(
+          new Date(new Date().setFullYear(new Date().getFullYear() + 3))
+        ).setHours(12, 0, 0, 0);
+        const maturityDate = new Date(
+          document.getElementById("maturity_date").value
+        ).setHours(12, 0, 0, 0);
+        const today = new Date().setHours(12, 0, 0, 0);
+
+        let interestRate = 2.95;
+        //적금일이 오늘 이전일 경우
+        if (maturityDate < today) {
+          alert("만기일은 오늘 이후로 설정해주세요.");
+          document.getElementById("maturity_date").value = sixMonthsLater
+            .toISOString()
+            .split("T")[0];
+          return;
+        }
+        // 적금일이 6개월이 안될경우
+        else if (maturityDate < sixMonthsLater.setHours(12, 0, 0, 0)) {
+          alert("적금 기간은 최소 6개월 이상이어야 합니다.");
+          document.getElementById("maturity_date").value = sixMonthsLater
+            .toISOString()
+            .split("T")[0];
+          return;
+        }
+        // 적금 기간 6개월 이상 12개월 미만 금리 2.95
+        else if (
+          maturityDate >= sixMonthsLater.setHours(12, 0, 0, 0) &&
+          maturityDate < oneYearLater
+        ) {
+          interestRate = 2.95;
+          document.getElementById("interest").innerText = interestRate;
+          return interestRate;
+        }
+        // 적금 기간 1년 이상 2년 미만
+        else if (maturityDate >= oneYearLater && maturityDate < twoYearsLater) {
+          interestRate = 3.1;
+          document.getElementById("interest").innerText = interestRate;
+          return interestRate;
+        }
+        // 적금 기간 2년 이상 3년 이하
+        else if (
+          maturityDate >= twoYearsLater &&
+          maturityDate <= threeYearsLater
+        ) {
+          interestRate = 2.8;
+          document.getElementById("interest").innerText = interestRate;
+          alert("24개월 이상 36개월 미만입니다", interestRate);
+          return interestRate;
+        }
+        // 적금 기간 3년 초과
+        else if (maturityDate > threeYearsLater) {
+          alert("적금 기간은 최대 3년 이하여야 합니다.");
+          document.getElementById("maturity_date").value = sixMonthsLater
+            .toISOString()
+            .split("T")[0];
+          document.getElementById("interest").innerText = interestRate;
+        }
+      }
+
+      function formatAmount(amount) {
+        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      // 적금 내역 불러오기
+      function loadSavings() {
+        fetch(SAVING_API_BASE + "/saving?user_email" + user.user_email)
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            const list = document.getElementById("savingsList");
+            list.innerHTML = "";
+            if (!Array.isArray(data) || data.length === 0) {
+              list.innerHTML = "<li>적금 내역이 없습니다.</li>";
+              return;
+            }
+            for (let i = 0; i < data.length; i++) {
+              let s = data[i];
+              list.innerHTML += `
+              <li class='deposit-card' style='font-size:18px;'>
+                <div class='saving-info'>
+                  <ul style=''><img src="./img/calendar.svg"/>적금 기간 :  ${
+                    s.start_date
+                  } ~ ${s.maturity_date}</ul>
+                  <ul><img src="./img/cycle.svg"/>적금 주기 : ${
+                    s.savings_cycle
+                  }</ul>
+                </div>
+                <div class='saving-info'>
+                    <ul ><img src="./img/amount.svg"/> 납입 금액: ${formatAmount(
+                      s.amount
+                    )}원</ul>
+                  <ul><img src="./img/interest.svg"/>이율 : ${
+                    s.interest_rate
+                  }%</ul>
+                </div>
+                <div class='btn-section'>
+                  <div >
+                    <button class='btn-g' onclick="editSaving('${s.id}', ${
+                s.amount
+              })">수정</button>
+                    <button class='btn-r' onclick="deleteSaving('${
+                      s.id
+                    }')">삭제</button>
+                  </div>
+                  <div>
+                    <button class='btn-b' onclick="calculateAmount(
+                    ${s.amount}, ${s.interest_rate},'${s.start_date}',  '${
+                s.maturity_date
+              }'
+                    )">만기액 계산하기</button>
+                  </div>
+                </div>
+              </li>
+
+              `;
+            }
+          });
+      }
+
+      //금액 확인 기능
+      function updateAmountDisplay() {
+        const amount = document.getElementById("savings_amount").value;
+        document.getElementById("amountDisplay").innerText = formatAmount(
+          amount || "0"
+        );
+      }
+
+      // 적금 추가 기능
+      function addSaving() {
+        const data = {
+          user_email: user.user_email,
+          maturity_date: document.getElementById("maturity_date").value,
+          start_date: document.getElementById("start_date").value,
+          interest_rate: calculatePeriod(),
+          savings_cycle: document.getElementById("savingsCycle").value,
+          amount: document.getElementById("savings_amount").value,
+        };
+        fetch(SAVING_API_BASE + "/saving", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }).then(function () {
+          alert("적금이 추가되었습니다.");
+          loadSavings();
+        });
+      }
+
+      // 적금금액 수정 기능
+      function editSaving(id, amount) {
+        const newAmount = prompt("새 금액을 입력하세요", amount);
+        if (!newAmount) return;
+        fetch(SAVING_API_BASE + "/saving/" + id, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ amount: newAmount }),
+        }).then(function () {
+          loadSavings();
+        });
+      }
+
+      // 적금 삭제 기능
+      function deleteSaving(id) {
+        fetch(SAVING_API_BASE + "/saving/" + id, {
+          method: "DELETE",
+        }).then(function () {
+          alert("소비내역이 삭제되었습니다.");
+          loadSavings();
+        });
+      }
+
+      // 만기액 계산 기능
+      function calculateAmount(amount, interestRate, startDate, maturityDate) {
+        startDate = new Date(startDate);
+        const months =
+          (new Date(maturityDate) - startDate) / (1000 * 60 * 60 * 24 * 30);
+        const totalAmount =
+          amount * months + amount * (interestRate / 100) * (months / 12);
+
+        alert(`만기액은 ${formatAmount(totalAmount.toFixed(0))}원 입니다.`);
+      }
+    </script>
+  </body>
+</html>

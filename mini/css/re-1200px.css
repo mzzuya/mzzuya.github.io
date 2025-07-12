@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+@media (max-width: 1200px) {
+    #gnb{
+        width: 85%;
+    }
+
+    .slide img{
+        height: 800px;
+    }
+
+    #sect01 .inner{
+        height: 680px;
+    }
+    .sect01-info{
+        width: 80%;
+        height: 140px;
+    }
+    .sect01-info h3{
+        font-size: 15px;
+    }
+    .sect01-info p{
+        display: none;
+    }
+    .sect01-info span{
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+    .prev::after{
+        top: 220px;
+    }
+    .next::after{
+        top: 220px;
+    }
+
+
+    #sect02 h2{
+        padding: 80px 0 50px;
+    }
+    .tab-section img{
+        height: 400px;
+    }
+    #tab-button-nav{
+        width: 28%;
+    }
+
+
+    #sect03{
+        width: 100%;
+    }
+    #sect03 h2{
+        padding: 80px 0 50px;
+    }
+    #sect03 .box .imgbox{
+        width: 60%;
+    }
+    #sect03 .box img{
+        width: 100%;
+    }
+    #sect03 .box .textbox,
+    #sect03 .box .textbox1{
+        width: 50%;
+    }
+    #sect03 .box .textbox h3,
+    #sect03 .box .textbox1 h3{
+        font-size: 25px;
+    }
+    #sect03 .box .textbox p,
+    #sect03 .box .textbox1 p{
+        font-size: 13px;
+    }
+
+
+
+    #sect04 h2{
+        padding: 80px 0 50px;
+    }
+    .sect04-slide img{
+        height: 200px;
+    }
+    .sect04-info{
+        height: 170px;
+    }
+    .sect04-info h3{
+        font-size: 20px;
+    }
+    .slick-prev{
+        top: 160px;
+    }
+    .slick-next{
+        top: 160px;
+    }
+    
+
+
+
+    #sect05 h2{
+        padding: 80px 0 50px;
+    }
+    #sect05 .box-wrapper{
+        width: 600px;
+    }
+    #sect05 .box>.imgbox{
+        height: 300px;
+    }
+    #sect05 .box img{
+        width: 300px;
+        height: 300px;
+    }
+    #sect05 .box>.imgbox::before{
+        top: 200px;
+        left: 115px;
+    }
+}

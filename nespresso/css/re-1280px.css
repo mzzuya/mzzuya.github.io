@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+@media all and (max-width: 1279px){
+
+    header .inner{
+        width: 90%;
+    }
+    header #gnb{
+        width: 35%;
+    }
+    header #logo img{
+        width: 130px;
+        height: auto;
+    }
+    header .etc{
+        right: 7%;
+    }
+    header .etc ul li img{
+        width: 23px;
+        height: 23px;
+    }
+
+
+    #main-visual .slide .inner{
+        left: 5%;
+    }
+    #main-visual .slide .inner h1{
+        font-size: 40px;
+    }
+    #main-visual .slide .inner p{
+        font-size: 16px;
+    }
+
+
+
+    #sect01 .text-info{
+        margin: auto 5%;
+    }
+    #sect01 .text-info h1{
+        font-size: 25px;
+    }
+    #sect01 .text-info p{
+        font-size: 15px;
+    }
+    #sect01 .slide-wrapper .cont .info h1{
+        font-size: 18px;
+    }
+    #sect01 .slide-wrapper .cont .info p{
+        font-size: 13px;
+    }
+
+
+
+    #sect02 .bg{
+        background-position: center;
+    }
+    #sect02 .inner{
+        padding: 80px 0;
+    }
+    #sect02 .info{
+        width: 35%;
+        margin: auto 5%;
+    }
+    #sect02 .info h3{
+        font-size: 18px;
+    }
+    #sect02 .info h1{
+        font-size: 28px;
+    }
+    #sect02 .info p{
+        font-size: 15px;
+    }
+
+
+
+
+    #sect03 .inner{
+        width: 90%;
+    }
+    #sect03 .info h2{
+        font-size: 18px;
+    }
+    #sect03 .info h1{
+        font-size: 28px;
+    }
+    #sect03 .info h3{
+        font-size: 15px;
+    }
+    #sect03 .info h5{
+        font-size: 11px;
+    }
+
+
+
+
+    #sect04 .inner{
+        width: 90%;
+    }
+    #sect04 .inner>h1{
+        font-size: 28px;
+    }
+    #sect04 .tab3-box p{
+        font-size: 18px;
+    }
+    
+
+
+
+
+    #sect05 .bg{
+        background-position: center;
+    }
+    #sect05 .info h1{
+        font-size: 28px;
+    }
+    #sect05 .info p{
+        font-size: 15px;
+    }
+
+
+
+
+    footer .inner{
+        width: 90%;
+        font-size: 11px;
+    }
+    footer .foot-nav>ul>li{
+        padding-right: 10%;
+    }
+}
