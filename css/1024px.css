@@ -1,5 +1,8 @@
 @media screen and (min-width: 769px) and (max-width: 1024px){
     /*헤더*/
+    .intro>h3{
+        font-size: 22px;
+    }
     .intro>h1{
         font-size: 48px;
     }
@@ -35,6 +38,9 @@
         display: inline-block;
         text-align: left;
     }
+    .project-info>h2{
+        font-size: 16px;
+    }
     .project-info>h3{
         font-size: 28px;
     }
@@ -61,6 +67,9 @@
     }
     .clone-block .view-button{
         font-size: 13px;
+    }
+    .clone-block>h3{
+        font-size: 14px;
     }
 
     /*푸터*/

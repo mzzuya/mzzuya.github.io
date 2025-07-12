@@ -7,6 +7,9 @@
     header{
         padding: 0 4vw;
     }
+    .intro>h3{
+        font-size: 18px;
+    }
     .intro>h1{
         font-size: 40px;
     }
@@ -54,6 +57,9 @@
         display: inline-block;
         text-align: left;
     }
+    .project-info>h2{
+        font-size: 14px;
+    }
     .project-info>h3{
         font-size: 20px;
     }
@@ -100,6 +106,9 @@
     }
     .clone-block .view-button{
         font-size: 11px;
+    }
+    .clone-block>h3{
+        font-size: 14px;
     }
 
     /*푸터*/
