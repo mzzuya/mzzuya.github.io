@@ -7,18 +7,19 @@
         font-size: 48px;
     }
     .intro>p{
-        font-size: 16px;
+        font-size: 15px;
     }
     .intro>h2{
-        font-size: 18px;
+        font-size: 17px;
     }
     .contact-links>a,.contact-links>p{
-        font-size: 14px;
+        font-size: 15px;
     }
 
     /*공통섹션*/
     section{
         padding: 0 4vw;
+        gap: 50px;
     }
 
     /*메인 프로젝트 프레임 공통*/
@@ -31,8 +32,8 @@
         width: 40%;
     }
     .dot{
-        width: 13px;
-        height: 13px;
+        width: 11px;
+        height: 11px;
     }
     .project-info ul{
         display: inline-block;
@@ -74,10 +75,10 @@
 
     /*푸터*/
     .footer-content h3{
-        font-size: 22px;
+        font-size: 20px;
     }
     .foot-contact-links{
-        font-size: 14px;
+        font-size: 15px;
     }
     footer> .copy{
         font-size: 14px;

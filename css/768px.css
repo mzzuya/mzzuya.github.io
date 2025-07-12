@@ -2,7 +2,11 @@
     body{
         padding: 0 4vw;
     }
+
     /*헤더*/
+    header{
+        padding: 0;
+    }
     .intro>h3{
         font-size: 18px;
     }
@@ -16,12 +20,13 @@
         font-size: 15px;
     }
     .contact-links>a,.contact-links>p{
-        font-size: 11px;
+        font-size: 13px;
     }
 
     /*공통섹션*/
     section{
         padding: 0;
+        gap: 36px;
     }
 
     /*메인 프로젝트 프레임 공통*/
@@ -87,7 +92,7 @@
         font-size: 16px;
     }
     .foot-contact-links{
-        font-size: 11px;
+        font-size: 13px;
     }
     footer> .copy{
         font-size: 11px;

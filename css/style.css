@@ -51,6 +51,8 @@ header{
     font-weight: normal;
     line-height: 1.6;
     margin: 18px 0;
+    word-break: keep-all;
+    white-space: normal;
 }
 .contact-links{
     display: flex;
@@ -61,7 +63,7 @@ header{
     color: #7D7D7D ;
 }
 .contact-links>a,.contact-links>p {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
     color: #7D7D7D ;
 }
@@ -74,30 +76,29 @@ header{
 }
 .scroll-icon{
     position: absolute;
+    margin: 0 auto;
     bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     width: 36px;
-    opacity: 0.7;
+    opacity: 0.6;
     animation: bounce 2s infinite;
-    cursor: pointer;
 }
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
 }
 
 /*공통섹션*/
 section{
     margin: auto;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1440px;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 8vw;
-    gap: 50px;
 }
 
 /*메인 프로젝트 프레임 공통*/
@@ -116,7 +117,7 @@ section{
 }
 .device-shadow {
     position: absolute;
-    bottom: -19px;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -180,9 +181,7 @@ section{
 /*메인 프로젝트 텍스트 공통*/
 .project-info{
     width: 50%;
-    max-width: 450px;
-    word-break: keep-all;
-    white-space: normal;
+    max-width: 350px;
 }
 .project-info>h2{
     font-family: 'UhBeeSeulvely';
@@ -199,7 +198,7 @@ section{
 }
 .project-info>p{
     font-weight: normal;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -210,20 +209,22 @@ section{
 .project-info li strong {
     font-weight: bold;
     color: #A3B18A;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 .project-info ul li {
+    max-width: 100%;
     font-weight: normal;
     font-size: 15px;
-    line-height: 2;
-    margin-bottom: 5px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    word-break: keep-all;
     white-space: normal;
 }
 .dot {
     border: 0.5px solid #7D7D7D;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     margin-right: 3px;
 }
@@ -266,8 +267,10 @@ section{
     font-size: 32px;
 }
 .clone-section>p{
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
+    word-break: keep-all;
+    white-space: normal;
     margin-bottom: 50px;
 }
 .clone-grid {
@@ -281,12 +284,9 @@ section{
 .clone-block .view-button{
     font-size: 14px;
 }
-.clone-block .device-shadow{
-    bottom: -5px;
-}
 .clone-block>h3{
     font-weight: normal;
-    font-size: 15px;
+    font-size: 16px;
     margin: 15px 0;
 }
 
@@ -316,6 +316,8 @@ footer{
     font-size: 22px;
     font-weight: normal;
     line-height: 1.6;
+    word-break: keep-all;
+    white-space: normal;
     margin: 0;
 }
 .foot-contact-links{
