@@ -180,7 +180,9 @@ section{
 /*메인 프로젝트 텍스트 공통*/
 .project-info{
     width: 50%;
-    max-width: 350px;
+    max-width: 450px;
+    word-break: keep-all;
+    white-space: normal;
 }
 .project-info>h2{
     font-family: 'UhBeeSeulvely';
@@ -215,6 +217,7 @@ section{
     font-size: 15px;
     line-height: 2;
     margin-bottom: 5px;
+    white-space: normal;
 }
 .dot {
     border: 0.5px solid #7D7D7D;
