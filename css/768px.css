@@ -1,0 +1,89 @@
+@media screen and (min-width: 426px) and (max-width: 768px){
+    body{
+        padding: 0 4vw;
+    }
+    /*헤더*/
+    header{
+        gap: 24px;
+    }
+    .intro>h1{
+        font-size: 40px;
+    }
+    .intro>p{
+        font-size: 13px;
+    }
+    .intro>h2{
+        font-size: 15px;
+    }
+    .contact-links>a,.contact-links>p{
+        font-size: 11px;
+    }
+
+    /*공통섹션*/
+    section{
+        padding: 0;
+    }
+
+    /*메인 프로젝트 프레임 공통*/
+    .frame-wrap{
+        width: 60%;
+    }
+
+    /*메인 프로젝트 텍스트 공통*/
+    .project-info{
+        width: 40%;
+    }
+    .dot{
+        width: 11px;
+        height: 11px;
+    }
+    .project-info>h3{
+        font-size: 20px;
+    }
+    .project-info>p{
+        font-size: 14px;
+    }
+    .project-info ul li{
+        font-size: 13px;
+    }
+    .type-tag>.btn{
+        font-size: 11px;
+    }
+
+    .view-button{
+        font-size: 11px;
+    }
+
+    /*clone-section*/
+    .clone-section{
+        height: auto !important;
+    }
+    .clone-grid{
+        flex-direction: column;
+        gap: 70px;
+    }
+    .clone-block .frame-wrap {
+        max-width: 60%;
+    }
+    .clone-section>h2{
+        font-size: 20px;
+    }
+    .clone-section>p{
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    .clone-block .view-button{
+        font-size: 11px;
+    }
+
+    /*푸터*/
+    footer>h3{
+        font-size: 16px;
+    }
+    .foot-contact-links{
+        font-size: 11px;
+    }
+    footer>p{
+        font-size: 11px;
+    }
+}

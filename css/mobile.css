@@ -1,0 +1,121 @@
+@media screen and (max-width: 425px) {
+    body{
+        padding: 0 4vw;
+    }
+
+    /*헤더*/
+    header{
+        padding: 0 4vw;
+    }
+    .intro>h1{
+        font-size: 40px;
+    }
+    .intro>p{
+        font-size: 13px;
+    }
+    .intro>h2{
+        font-size: 15px;
+    }
+    .contact-links>a,.contact-links>p{
+        font-size: 11px;
+    }
+
+    /*공통섹션*/
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto !important;
+        text-align: center;
+        padding: 60px 4vw 40px;
+    }
+
+    /*메인 프로젝트 프레임 공통*/
+    .frame-wrap{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /*메인 프로젝트 텍스트 공통*/
+    .project-info{
+        width: 100%;
+        text-align: center;
+    }
+    .type-tag{
+        align-items: center;
+        justify-content: center;
+    }
+    .dot{
+        width: 11px;
+        height: 11px;
+    }
+    .project-info ul{
+        display: inline-block;
+        text-align: left;
+    }
+    .project-info>h3{
+        font-size: 20px;
+    }
+    .project-info>p{
+        font-size: 14px;
+    }
+    .project-info ul li{
+        font-size: 13px;
+    }
+    .type-tag>.btn{
+        font-size: 11px;
+    }
+
+    .view-button{
+        font-size: 11px;
+    }
+
+    /*mini 위치변경*/
+    .project-block .frame-wrap {
+        order: 1; /* 모니터 위로 */
+    }
+    .project-block .project-info {
+        order: 2; /* 텍스트 아래로 */
+    }
+
+    /*clone-section*/
+    .clone-section{
+        padding: 60px 4vw 40px;
+    }
+    .clone-grid{
+        height: auto !important;
+        flex-direction: column;
+        gap: 70px;
+    }
+    .clone-block .frame-wrap {
+        max-width: 100%;
+    }
+    .clone-section>h2{
+        font-size: 20px;
+    }
+    .clone-section>p{
+        font-size: 14px;
+        margin: 17px 0 30px;
+    }
+    .clone-block .view-button{
+        font-size: 11px;
+    }
+
+    /*푸터*/
+    footer{
+        height: auto !important;
+        padding: 160px 0 20px;
+    }
+    footer>h3{
+        font-size: 16px;
+    }
+    .foot-contact-links{
+        font-size: 11px;
+    }
+    footer>p{
+        position: static;
+        font-size: 11px;
+        margin-top: 48px;
+    }
+}

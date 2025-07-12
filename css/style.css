@@ -102,7 +102,7 @@ section{
 }
 .device-shadow {
     position: absolute;
-    bottom: -20px;
+    bottom: -19px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -136,13 +136,13 @@ section{
 .screen {
     position: absolute;
     top: 2%;
-    left: 1.8%;
+    left: 1.5%;
     width: 97%;
-    height: 72%;
+    height: 71.5%;
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    border-radius: 5px;
+    border-radius: 3px;
     z-index: 1;
     overflow: hidden;
 }
@@ -157,6 +157,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
 }
 .view-button:hover {
     background-color: #D4A373;
@@ -171,6 +172,7 @@ section{
 }
 .project-info>h3{
     color: #2C3E50;
+    font-weight: bold;
     font-size: 28px;
     margin-bottom: 10px;
 }
@@ -178,6 +180,10 @@ section{
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+.project-info ul{
+    display: inline-block;
+    text-align: left;
 }
 .project-info li strong {
     font-weight: bold;
@@ -194,6 +200,7 @@ section{
     width: 14px;
     height: 14px;
     border-radius: 50%;
+    margin-right: 3px;
 }
 .type-tag{
     display: flex;
@@ -228,6 +235,7 @@ section{
 }
 .clone-section>h2{
     color: #2C3E50;
+    font-weight: bold;
     font-size: 28px;
 }
 .clone-section>p{

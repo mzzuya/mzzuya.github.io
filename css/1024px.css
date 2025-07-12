@@ -1,0 +1,76 @@
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    /*헤더*/
+    .intro>h1{
+        font-size: 48px;
+    }
+    .intro>p{
+        font-size: 16px;
+    }
+    .intro>h2{
+        font-size: 18px;
+    }
+    .contact-links>a,.contact-links>p{
+        font-size: 14px;
+    }
+
+    /*공통섹션*/
+    section{
+        padding: 0 8vw;
+    }
+
+    /*메인 프로젝트 프레임 공통*/
+    .frame-wrap{
+        width: 60%;
+    }
+
+    /*메인 프로젝트 텍스트 공통*/
+    .project-info{
+        width: 40%;
+    }
+    .dot{
+        width: 13px;
+        height: 13px;
+    }
+    .project-info ul{
+        display: inline-block;
+        text-align: left;
+    }
+    .project-info>h3{
+        font-size: 28px;
+    }
+    .project-info>p{
+        font-size: 16px;
+    }
+    .project-info ul li{
+        font-size: 15px;
+    }
+    .type-tag>.btn{
+        font-size: 13px;
+    }
+
+    .view-button{
+        font-size: 13px;
+    }
+
+    /*clone-section*/
+    .clone-section>h2{
+        font-size: 28px;
+    }
+    .clone-section>p{
+        font-size: 16px;
+    }
+    .clone-block .view-button{
+        font-size: 13px;
+    }
+
+    /*푸터*/
+    footer>h3{
+        font-size: 22px;
+    }
+    .foot-contact-links{
+        font-size: 14px;
+    }
+    footer>p{
+        font-size: 14px;
+    }
+}
