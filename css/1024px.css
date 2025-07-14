@@ -1,15 +1,9 @@
 @media screen and (min-width: 769px) and (max-width: 1024px){
     /*헤더*/
-    .intro>h3{
-        font-size: 22px;
-    }
     .intro>h1{
         font-size: 48px;
     }
     .intro>p{
-        font-size: 15px;
-    }
-    .intro>h2{
         font-size: 17px;
     }
     .contact-links{

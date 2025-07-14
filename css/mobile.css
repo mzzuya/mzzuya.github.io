@@ -9,16 +9,10 @@
     header{
         padding: 0 4vw;
     }
-    .intro>h3{
-        font-size: 18px;
-    }
     .intro>h1{
         font-size: 40px;
     }
     .intro>p{
-        font-size: 13px;
-    }
-    .intro>h2{
         font-size: 15px;
     }
     .contact-links{
