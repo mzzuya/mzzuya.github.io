@@ -16,6 +16,9 @@
     .contact-links{
         font-size: 13px;
     }
+    .scroll-icon img{
+        width: 22px;
+    }
 
     /*공통섹션*/
     section{

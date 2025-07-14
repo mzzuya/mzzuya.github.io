@@ -34,13 +34,12 @@ header{
     font-family: 'SUIT';
     font-size: 64px;
     font-weight: 900;
-    margin: 5px 0 18px;
+    margin: 24px 0;
 }
 .intro>p{
     font-size: 18px;
     font-weight: normal;
     line-height: 1.6;
-    margin: 18px 0;
     word-break: keep-all;
     white-space: normal;
 }
@@ -49,6 +48,7 @@ header{
     justify-content: center;
     align-items: center;
     gap: 12px;
+    margin: 18px 0;
     font-size: 16px;
     font-weight: 500;
     color: #7D7D7D;
@@ -75,9 +75,12 @@ header{
     bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
-    width: 36px;
     opacity: 0.6;
     animation: bounce 2s infinite;
+    cursor: pointer;
+}
+.scroll-icon img{
+    width: 36px;
 }
 @keyframes bounce {
     0%, 100% { transform: translate(-50%, 0); }
