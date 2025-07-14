@@ -43,6 +43,10 @@ header{
     word-break: keep-all;
     white-space: normal;
 }
+.intro strong{
+    color: #4A5A3F;
+    font-weight: bold;
+}
 .contact-links{
     display: flex;
     justify-content: center;
