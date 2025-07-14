@@ -187,6 +187,8 @@ section{
 .project-info{
     width: 50%;
     max-width: 400px;
+    word-break: keep-all;
+    white-space: normal;
 }
 .project-info>h2{
     font-family: 'UhBeeSeulvely';
@@ -229,8 +231,6 @@ section{
     font-size: 15px;
     line-height: 1.7;
     margin-bottom: 12px;
-    word-break: keep-all;
-    white-space: normal;
 }
 .dot {
     border: 0.5px solid #7D7D7D;
