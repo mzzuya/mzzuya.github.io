@@ -57,22 +57,26 @@ header{
 .contact-links{
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7D7D7D;
 }
 .contact-links span{
-    padding: 0 20px;
-    color: #7D7D7D ;
-}
-.contact-links>a,.contact-links>p {
-    font-size: 16px;
-    font-weight: normal;
-    color: #7D7D7D ;
+    color: #ccc;
+    user-select: none;
 }
 .contact-links>a{
     cursor: pointer;
-    transition: color 0.3s ease;
+    color: #A3B18A;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 .contact-links>a:hover{
-    color: #A3B18A;
+    color: #6B8E23;
+    border-bottom: 1px solid #6B8E23;
 }
 .scroll-icon{
     position: absolute;
@@ -332,12 +336,16 @@ footer{
 }
 .foot-contact-links{
     display: flex;
-    font-weight: normal;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
     font-size: 16px;
+    font-weight: 500;
     color: #7D7D7D;
 }
 .foot-contact-links>span{
-    padding: 0 20px;
+    color: #ccc;
+    user-select: none;
 }
 footer> .copy{
     position: absolute;
