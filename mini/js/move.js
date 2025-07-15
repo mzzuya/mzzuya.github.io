@@ -53,14 +53,13 @@ jQuery(document).ready(function(){
 
 
 
-    const $nav = document.querySelector('#tab-button-nav')
+    const $nav = document.querySelector('#tab-button-nav');
     const $sections = document.querySelectorAll('.tab-section');
+    const $tabs = document.querySelectorAll('.tab-button');
 
     $nav.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('tab-button')) {
-        return;
-      }
-      
+      if (!e.target.classList.contains('tab-button')) return;
+
       const focusedTabId = e.target.dataset.tabSection;
 
       $sections.forEach(($section) => {
@@ -70,6 +69,9 @@ jQuery(document).ready(function(){
           $section.setAttribute('hidden', true);
         }
       });
+
+      $tabs.forEach((btn) => btn.classList.remove('active'));
+      e.target.classList.add('active');
     });
 
 

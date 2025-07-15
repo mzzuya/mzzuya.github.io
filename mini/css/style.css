@@ -13,7 +13,7 @@ body{
     background-color: #121212 ;
     color: #efefef;
     font-family: 'Noto Sans KR', sans-serif;
-    padding-top: 80px;
+    padding-top: 7vw;
 }
 
 /*header*/
@@ -21,14 +21,14 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #121212;
+    background-color: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(4px); 
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 .header-inner {
     width: 100%;
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 20px 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,6 +44,7 @@ header {
 .navi li a {
     font-size: 15px;
     letter-spacing: 1px;
+    transition: color 0.3s;
 }
 .navi li a:hover {
     color: #BB3E3E;
@@ -56,7 +57,7 @@ header {
     width: 100%;
     height: 100vh;
     position: relative;
-    margin-bottom: 110px;
+    margin-bottom: 120px;
 }
 .slide{
     width: 100%;
@@ -66,7 +67,8 @@ header {
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%; 
+    height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
@@ -113,14 +115,16 @@ header {
     max-width: 90%;
 }
 .hero-overlay h1 {
-    font-size: 56px;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.5px;
 }
 .hero-overlay p {
     font-size: 18px;
-    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    margin-bottom: 1.8rem;
 }
 .hero-overlay .btn {
     display: inline-block;
@@ -128,11 +132,14 @@ header {
     background-color: #BB3E3E;
     border-radius: 30px;
     font-size: 16px;
-    transition: background 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 .hero-overlay .btn:hover {
     background-color: #992F2F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 
@@ -142,7 +149,8 @@ header {
     padding-bottom: 100px;
 }
 #sect01 .inner{
-    background: url("../img/bg.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(18,18,18,0.1), rgba(18,18,18,0.4)),
+                url("../img/bg.jpg") center/cover no-repeat;
     width: 80%;
     height: 800px;
     margin: 0 auto;
@@ -152,8 +160,9 @@ header {
     text-align: center;
     padding: 100px 0 0;
     font-size: 36px;
-    font-family: 'MaruBuri', serif;
-    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     margin-bottom: 60px;
     position: relative;
 }
@@ -172,14 +181,22 @@ header {
     margin: 0 auto;
 }
 .sect01-slide{
-    background-color: #fff;
-    margin: 0 10px;
-    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.sect01-slide:hover {
+  transform: translateY(-8px);
 }
 .sect01-slide img{
     width: 90%;
     margin: auto;
     padding: 50px 0;
+}
+.sect01-slide img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 .sect01-info{
     width: 90%;
@@ -189,15 +206,17 @@ header {
     position: relative;
 }
 .sect01-info h3{
-    color: #1E1E1E;
-    font-size: 20px;
-    letter-spacing: 1px;
-    padding-bottom: 20px;
+    color: #efefef;
+    font-size: 22px;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 .sect01-info p{
-    color: #1E1E1E;
-    font-size: 13px;
+    color: #efefef;
+    font-size: 14px;
+    line-height: 1.6;
     padding-bottom: 30px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 .sect01-info .btn{
     position: absolute;
@@ -206,10 +225,11 @@ header {
     transform: translateX(-50%);
     background-color: #BB3E3E;
     border-radius: 30px;
-    color: #fff;
+    color: #efefef;
     transition: background 0.3s;
-    padding: 10px 22px;
-    font-size: 13px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
 }
 .sect01-info .btn:hover{
@@ -238,22 +258,23 @@ header {
     display: block;
     width: 10px;
     height: 10px;
-    border-top: 2px solid rgba(255,255,255,0.8);
-    border-right: 2px solid rgba(255,255,255,0.8);
+    border-top: 3px solid rgba(255,255,255,0.8);
+    border-right: 3px solid rgba(255,255,255,0.8);
     margin: 14px auto;
 }
 .prev {
-    left: 45px;
+    left: 2%;
 }
 .prev::after {
     transform: rotate(-135deg);
 }
 .next {
-    right: 45px;
+    right: 2%;
 }
 .next::after {
     transform: rotate(45deg);
 }
+
 
 /*sect02*/
 #sect02{
@@ -265,8 +286,9 @@ header {
     text-align: center;
     padding: 100px 0 0;
     font-size: 36px;
-    font-family: 'MaruBuri', serif;
-    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     margin-bottom: 60px;
     position: relative;
 }
@@ -287,25 +309,27 @@ header {
 .sect02-info h3{
     font-size: 25px;
     padding: 30px 0;
-    font-family: 'MaruBuri', serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
 }
 .sect02-info p{
-    font-size: 15px;
-    line-height: 23px;
-    padding-bottom: 30px;
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.7;
+    padding-bottom: 10px;
 }
 .sect02-info span{
-    font-size: 13px;
-    border-bottom: 1px solid #efefef;
-    transition: color 0.3s;
+    display: inline-block;
+    font-size: 14px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
-.sect02-info span:hover{
-    border-bottom: 1px solid #BB3E3E;
+.sect02-info span:hover {
+    border-bottom: 2px solid #BB3E3E;
     color: #BB3E3E;
 }
-
 .sect02-wrapper{
     width: 70%;
 }
@@ -314,12 +338,11 @@ header {
     height: 600px;
     object-fit: cover;
 }
-
 #tab-button-nav{
     width: 20%;
     position: absolute;
     top: 425px;
-    right: 0;
+    right: 5%;
     display: inline-flex;
     flex-direction: column;
 }
@@ -334,6 +357,13 @@ header {
     cursor: pointer;
     padding-left: 18px;
     transition: color 0.3s;
+}
+.tab-button.active {
+  color: #BB3E3E;
+  font-weight: 600;
+}
+.tab-button.active::before {
+  background-color: #BB3E3E;
 }
 .tab-button::before {
     content: '';
@@ -363,8 +393,9 @@ header {
     text-align: center;
     padding: 100px 0 0;
     font-size: 36px;
-    font-family: 'MaruBuri', serif;
-    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     margin-bottom: 60px;
     position: relative;
 }
@@ -382,12 +413,17 @@ header {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+#sect03 .box img:hover {
+    transform: scale(1.02);
 }
 #sect03 .box{
-    width: 100%;
     display: flex;
-    align-items: stretch;
-    padding-bottom: 70px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 80px;
 }
 #sect03 .box .textbox,
 #sect03 .box .textbox1{
@@ -402,16 +438,17 @@ header {
 }
 #sect03 .box .textbox h3,
 #sect03 .box .textbox1 h3{
-    font-size: 28px;
-    padding-bottom: 20px;
-    font-family: 'MaruBuri', serif;
-    letter-spacing: 1px;
+    font-size: 26px;
+    padding-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.4px;
 }
 #sect03 .box .textbox p,
 #sect03 .box .textbox1 p{
-    font-size: 15px;
-    line-height: 1.6;
-    letter-spacing: 0.3px;
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.8;
 }
 
 
@@ -425,8 +462,9 @@ header {
     text-align: center;
     padding: 100px 0 0;
     font-size: 36px;
-    font-family: 'MaruBuri', serif;
-    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     margin-bottom: 60px;
     position: relative;
 }
@@ -446,16 +484,22 @@ header {
 .sect04-slide{
     width: 35%;
     margin: 0 20px;
-    border: 0.5px solid #dedede;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     height: 450px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .sect04-slide img{
     width: 100%;
     height: 300px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+.sect04-slide:hover img {
+  transform: scale(1.03);
 }
 .sect04-info{
     width: 100%;
@@ -468,16 +512,19 @@ header {
 }
 .sect04-info h3{
     font-size: 18px;
-    color: #1E1E1E;
-    line-height: 1.4;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.5;
     margin-bottom: 12px;
     min-height: 3em;
 }
 .sect04-info span{
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 500;
     color: #1E1E1E;
-    border-bottom: 1px solid #1E1E1E;
+    border-bottom: 1px solid transparent;
     width: fit-content;
+    transition: all 0.3s;
     cursor: pointer;
 }
 .sect04-info span:hover{
@@ -489,10 +536,11 @@ header {
     top: 55%;
     transform: translateY(-50%);
     z-index: 9999;
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     border-radius: 100%;
-    background-color: rgba(255,255,255, 0.4);
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
     cursor: pointer;
     text-indent: -9999px;
     display: flex;
@@ -501,7 +549,7 @@ header {
     transition: background 0.3s;
 }
 .sect04-prev:hover, .sect04-next:hover {
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.3);
 }
 .sect04-prev {
     left: 50px;
@@ -530,13 +578,15 @@ header {
 #sect05{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding-bottom: 100px;
 }
 #sect05 h2{
     text-align: center;
+    padding: 100px 0 0;
     font-size: 36px;
-    font-family: 'MaruBuri', serif;
-    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     margin-bottom: 60px;
     position: relative;
 }
@@ -619,7 +669,7 @@ header {
     background-color: rgba(187, 62, 62, 0.9);
     border: none;
     border-radius: 30px;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.4s ease;
     z-index: 2;
     cursor: pointer;
@@ -632,7 +682,7 @@ header {
 /*footer*/
 footer{
     border-top: 0.5px solid #dedede;
-    padding: 40px 20px;
+    padding: 20px 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -643,8 +693,11 @@ footer{
     justify-content: center;
     gap: 30px;
 }
+.foot-nav a {
+    transition: color 0.3s;
+}
 .foot-nav a:hover {
-  color: #BB3E3E;
+    color: #BB3E3E;
 }
 footer p{
     font-size: 13px;
