@@ -1,24 +1,34 @@
 jQuery(document).ready(function(){
 
-  $("#gnb a").on("click",function(){
-    event.preventDefault(); 
-    let hash=$(this).attr("href");
-    let pos=$(hash).offset().top - 130;
-  
-    $("html").stop().animate({
-        scrollTop:pos
-      },600,"swing");
-  });
+    $("header nav a").on("click", function (e) {
+      e.preventDefault(); // 기본 링크 이동 막기
+      let target = $(this).attr("href"); // href 값 (예: #sect03)
+      let pos = $(target).offset().top - 80; // 필요 시 header 높이만큼 보정
+      $("html, body").stop().animate(
+        {
+          scrollTop: pos,
+        },
+        600,
+        "swing"
+      );
+    });
+
+    $(".hero-overlay .btn").on("click", function (e) {
+      e.preventDefault();
+      let target = $(this).attr("href");
+      let pos = $(target).offset().top - 80;
+      $("html, body").stop().animate({ scrollTop: pos }, 600, "swing");
+    });
 
   
     $('.slide-wrapper').slick({
         infinite: true,
-          dots: true,
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          fade: true,
-          fadeSpeed: 1000
+        dots: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        fade: true,
+        fadeSpeed: 1000
       });
 
 
@@ -64,9 +74,12 @@ jQuery(document).ready(function(){
 
 
     $('.sect04-wrapper').slick({
+      adaptiveHeight: false,
       centerMode: true,
       centerPadding: '60px',
       slidesToShow: 3,
+      prevArrow: $('.sect04-prev'),
+      nextArrow: $('.sect04-next'),
       responsive: [
         {
           breakpoint: 1100,

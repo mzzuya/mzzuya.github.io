@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>mini_redesign</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/re-1200px.css">
-    <link rel="stylesheet" href="css/re-700px.css">
+    <title>MINI_Redesign</title>
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/re-768px.css">
+    <link rel="stylesheet" href="css/re-1024px.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--jquery-->
     <script src="js/jquery-1.12.3.js"></script>
     <script src="js/move.js"></script>
+    <!--slick-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!--aos-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/MaruBuri.woff2" rel="stylesheet">
 </head>
 <body>
     <script>
         AOS.init();
     </script>
 <header>
-    <h1 id="logo">
-        <img src="img/mini-logo.svg" alt="logo">
-    </h1>
-    <nav id="gnb">
+    <div class="header-inner">
+        <h1 id="logo">
+        <a href="#"><img src="img/mini-logo.svg" alt="MINI logo"></a>
+        </h1>
+        <nav id="gnb">
         <ul class="navi">
             <li><a href="#sect01">Models</a></li>
             <li><a href="#sect02">Accessory</a></li>
-            <li><a href="#sect03">History of MINI</a></li>
+            <li><a href="#sect03">History</a></li>
             <li><a href="#sect04">News</a></li>
             <li><a href="#sect05">Service</a></li>
         </ul>
-    </nav>
+        </nav>
+    </div>
 
     <div class="ham">
         <div class="menu_btn">
@@ -57,33 +67,36 @@
 </header>
 
 
-<div id="main-visual">
+<section id="main-visual">
     <div class="slide-wrapper">
         <div class="slide">
-            <img src="img/main.jpg" alt="slider">
-        </div>
-        <div class="slide">
-            <img src="img/main2.jpg" alt="slider">
+            <img src="img/main4.jpg" alt="slider">
         </div>
         <div class="slide">
             <img src="img/main3.jpg" alt="slider">
         </div>
         <div class="slide">
-            <img src="img/main4.jpg" alt="slider">
+            <img src="img/main2.jpg" alt="slider">
+        </div>
+        <div class="slide">
+            <img src="img/main.jpg" alt="slider">
         </div>
         <div class="slide">
             <img src="img/main5.jpg" alt="slider">
         </div>
     </div>
-</div>
+    <div class="hero-overlay">
+        <h1>Drive Different</h1>
+        <p>전기차 시대의 MINI, 새롭게 달리다.</p>
+        <a href="#sect01" class="btn">Explore Models</a>
+    </div>
+</section>
 
-<div id="sect01">
+<section id="sect01">
     <div class="inner">
         <h2>Models</h2>
         <span class="prev"></span>
         <span class="next"></span>
-
-
         <div class="sect01-wrapper">
             <div class="sect01-slide">
                 <img src="img/car1.png" alt="car">
@@ -91,7 +104,7 @@
                     <h3>THE ALL-ELECTRIC MINI COOPER.</h3>
                     <p>Turning a new corner, go-kart-style.</p>
                     <p>From £ 30,000</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -100,7 +113,7 @@
                     <h3>THE NEW ALL-ELECTRIC MINI COUNTRYMAN.</h3>
                     <p>Look who's gone electric.</p>
                     <p>From £ 42,080</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -109,7 +122,7 @@
                     <h3>THE NEW MINI COOPER.</h3>
                     <p>An original reborn.</p>
                     <p>From £ 23,135</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -117,7 +130,7 @@
                 <div class="sect01-info">
                     <h3>THE ORIGINAL ICON.</h3>
                     <p>From £ 22,935</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -126,7 +139,7 @@
                     <h3>MINI 5-DOOR HATCH.</h3>
                     <p>The original icon, but more doors.</p>
                     <p>From £ 23,595</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -135,7 +148,7 @@
                     <h3>MINI CONVERTIBLE.</h3>
                     <p>Pure unfiltered excitement.</p>
                     <p>From £ 25,890</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -144,7 +157,7 @@
                     <h3>MINI CLUBMAN.</h3>
                     <p>The most refined, sophisticated MINI ever made.</p>
                     <p>From £ 27,440</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -152,7 +165,7 @@
                 <div class="sect01-info">
                     <h3>GET READY TO START EXPLORING.</h3>
                     <p>From £ 29,290</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
             <div class="sect01-slide">
@@ -161,18 +174,17 @@
                     <h3>JOHN COOPER WORKS.</h3>
                     <p>MINI thrill maximised.</p>
                     <p>From £ 32,755</p>
-                    <span>Details</span>
+                    <a href="#" class="btn">Details</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 
 
-<div id="sect02">
+<section id="sect02">
     <h2>Accessory</h2>
-
     <div class="sect02-wrapper">
         <section id="tab-section-1" class="tab-section">
             <img src="img/content.jpg" alt="car">
@@ -217,14 +229,14 @@
     </div>
 
     <nav id="tab-button-nav">
-        <button class="tab-button" data-tab-section="tab-section-1">&#9679; Shop Parts & Accessories</button>
-        <button class="tab-button" data-tab-section="tab-section-2">&#9679; Wheels & Tyres</button>
-        <button class="tab-button" data-tab-section="tab-section-3">&#9679; Cleaning & Care Products</button>
+        <button class="tab-button" data-tab-section="tab-section-1">Shop Parts & Accessories</button>
+        <button class="tab-button" data-tab-section="tab-section-2">Wheels & Tyres</button>
+        <button class="tab-button" data-tab-section="tab-section-3">Cleaning & Care Products</button>
     </nav>
-</div>
+</section>
 
 
-<div id="sect03">
+<section id="sect03">
     <h2>History of MINI</h2>
 
     <div class="box">
@@ -331,25 +343,17 @@
         data-aos-once="true">
             <h3>YOUR STORIES SHARED FOR MINI'S 60TH ANNIVERSARY.
             </h3>
-            <p>In 2019, MINI turned 60 years young. We celebrated 60 years of 
-                distinctive design, go-kart driving and wearing our iconic 
-                wings. And what a spectacular six decades they’ve been. 
-                But it wouldn’t have meant anything without you, our drivers.
-                As part of the celebration, we asked you to share one of your 
-                MINI stories with us. Whether it’s old or new, somewhere amazing 
-                your MINI has taken you, something incredible you’ve done with it 
-                or someone outstanding you’ve travelled with.
+            <p>In 2019, MINI turned 60 years young.  
+                We celebrated with go-kart driving, iconic wings, and stories from our amazing drivers.<br><br>
+                From timeless classics to new adventures, your MINI stories helped shape our legacy.
             </p>
         </div>
     </div>
-</div>
+</section>
 
 
-<div id="sect04">
+<section id="sect04">
     <h2>News</h2>
-    <span class="sect04-prev"></span>
-    <span class="sect04-next"></span>
-
     <div class="sect04-wrapper">
         <div class="sect04-slide">
             <img src="img/news1.jpg" alt="news">
@@ -415,10 +419,12 @@
             </div>
         </div>
     </div>
-</div>
+    <span class="sect04-prev"></span>
+    <span class="sect04-next"></span>
+</section>
 
 
-<div id="sect05">
+<section id="sect05">
     <h2>Service</h2>
 
     <div class="box-wrapper">
@@ -439,7 +445,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <footer>
     <h1 id="logo">
@@ -454,7 +460,7 @@
         <li><a href="#">FAQ</a></li>
     </ul>
 
-    <p>© MINI 2023</p>
+    <p>© MINI 2025</p>
 </footer>
 </body>
 </html>
