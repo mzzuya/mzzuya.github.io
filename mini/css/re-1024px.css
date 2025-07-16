@@ -1,4 +1,8 @@
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
+    body{
+        margin-top: 8vh;
+    }
+
     #logo img {
         width: 100px;
     }
@@ -41,7 +45,7 @@
     }
     .tab-button{
         font-size: 13px;
-        white-space: nowrap;
+        white-space: normal;
     }
 
     #sect03 .box .textbox h3,

@@ -105,25 +105,4 @@ jQuery(document).ready(function(){
     });
     
 
-
-
-
-    
-  $(document).ready(function(){
-
-    $('.menu_btn>a').on('click',function(){
-        $('.menu_btn').hide();
-        $('.sidebar_menu').show().animate({
-        right:0
-        });
-    });
-
-    $('.close_btn>a').on('click',function(){
-        $('.menu_btn').show();
-        $('.sidebar_menu').animate({
-        right:'-' + 100 + '%'
-        },function(){$('.sidebar_menu').hide();
-        });
-    });
-  });
 });

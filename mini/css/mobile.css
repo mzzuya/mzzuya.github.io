@@ -1,3 +1,137 @@
 @media (max-width: 425px){
+    #main-visual{
+        height: 50vh;
+    }
+    .slide img{
+        height: 50vh;
+    }
+    .slick-dots{
+        button{
+            width: 7px;
+			height: 7px;
+        }
+    }
+    .hero-overlay h1{
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+    .hero-overlay p{
+        display: none;
+    }
+    .hero-overlay .btn{
+        padding: 7px 16px;
+        font-size: 9px;
+    }
 
+    #sect01 h2,#sect02 h2,#sect03 h2,#sect04 h2,#sect05 h2{
+        font-size: 18px;
+    }
+    #sect01,#sect02,#sect03,#sect04{
+        padding-bottom: 0;
+    }
+
+    #sect01 .inner{
+        height: 580px;
+    }
+    .sect01-info{
+        height: 8rem;
+    }
+    .sect01-info h3{
+        font-size: 16px;
+    }
+    .sect01-info p{
+        display: none;
+    }
+    .sect01-info .btn{
+        font-size: 11px;
+        padding: 7px 16px;
+    }
+    .prev, .next{
+        width: 23px;
+        height: 23px;
+    }
+    .prev::after, .next::after{
+        width: 5px;
+        height: 5px;
+        border-top: 2px solid rgba(255,255,255,0.8);
+        border-right: 2px solid rgba(255,255,255,0.8);
+    }
+    .prev {
+        left: 1.8%;
+    }
+    .next {
+        right: 1.8%;
+    }
+
+    .sect02-wrapper{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .tab-section img{
+        height: 300px;
+    }
+    #sect02 h2{
+        margin-bottom: 10rem;
+    }
+    .sect02-info{
+        width: 70%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .sect02-info h3{
+        font-size: 16px;
+    }
+    #tab-button-nav{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 15px;
+    }
+
+    #sect03 .box{
+        flex-direction: column;
+        margin-bottom: 53px;
+    }
+    #sect03 .box .textbox,
+    #sect03 .box .textbox1{
+        width: 80%;
+        text-align: center;
+    }
+    #sect03 .box .textbox1{
+        order: 2;
+    }
+    #sect03 .box .textbox h3,
+    #sect03 .box .textbox1 h3{
+        font-size: 14px;
+    }
+
+    .sect04-prev, .sect04-next{
+        top: 63%;
+    }
+
+    #sect05 .box-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    #sect05 .box{
+        max-width: 80%;
+    }
+    #sect05 .textbox h3{
+        display: none;
+    }
+    #sect05 .box>.imgbox::before{
+        content: "View";
+        top: 42.5%;
+        padding: 7px 22px;
+    }
+
+    footer #logo img{
+        width: 60px;
+    }
+    .foot-nav{
+        display: none;
+    }
 }
