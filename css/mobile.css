@@ -48,19 +48,21 @@
     /*메인 프로젝트 텍스트 공통*/
     .project-info{
         width: 100%;
+        max-width: 340px;
         text-align: center;
         margin: 32px 0;
     }
     .type-tag{
         align-items: center;
         justify-content: center;
+        margin-top: 28px;
     }
     .dot{
         width: 11px;
         height: 11px;
     }
     .project-info ul{
-        display: inline-block;
+        display: block;
         text-align: left;
     }
     .project-info>h2{
@@ -120,16 +122,16 @@
     }
 
     /*푸터*/
-    footer{
-        height: auto !important;
-        padding: 160px 0 20px;
+    .footer-content .contact-links{
+        flex-direction: column;
+    }
+    .footer-content .contact-links .bar{
+        display: none;
     }
     .footer-content h3{
         font-size: 16px;
     }
     footer> .copy{
-        position: static;
         font-size: 11px;
-        margin-top: 48px;
     }
 }

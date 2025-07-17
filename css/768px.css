@@ -22,22 +22,40 @@
 
     /*공통섹션*/
     section{
-        padding: 0;
-        gap: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto !important;
+        text-align: center;
+        padding: 60px 4vw 40px;
     }
 
     /*메인 프로젝트 프레임 공통*/
     .frame-wrap{
-        width: 60%;
+        width: 80%;
+        max-width: 80%;
     }
 
     /*메인 프로젝트 텍스트 공통*/
     .project-info{
-        width: 40%;
+        width: 100%;
+        max-width: 550px;
+        text-align: center;
+        margin: 32px 0;
+    }
+    .type-tag{
+        align-items: center;
+        justify-content: center;
+        margin-top: 28px;
     }
     .dot{
         width: 11px;
         height: 11px;
+    }
+    .project-info ul{
+        display: block;
+        text-align: left;
     }
     .project-info>h2{
         font-size: 14px;
@@ -46,6 +64,7 @@
         font-size: 20px;
     }
     .project-info>p{
+        text-align: left;
         font-size: 14px;
     }
     .project-info ul li{
@@ -59,16 +78,25 @@
         font-size: 11px;
     }
 
+    /*mini 위치변경*/
+    .project-block .frame-wrap {
+        order: 1; /* 모니터 위로 */
+    }
+    .project-block .project-info {
+        order: 2; /* 텍스트 아래로 */
+    }
+
     /*clone-section*/
     .clone-section{
-        height: auto !important;
+        padding: 60px 4vw 40px;
     }
     .clone-grid{
+        height: auto !important;
         flex-direction: column;
         gap: 70px;
     }
     .clone-block .frame-wrap {
-        max-width: 60%;
+        max-width: 80%;
     }
     .clone-section>h2{
         font-size: 20px;
@@ -76,6 +104,7 @@
     .clone-section>p{
         font-size: 14px;
         margin-bottom: 30px;
+        max-width: 80%;
     }
     .clone-block .view-button{
         font-size: 11px;
