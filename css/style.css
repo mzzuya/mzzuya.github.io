@@ -255,16 +255,16 @@ section{
     display: flex;
     gap: 8px;
     justify-content: flex-start;
-    margin-top: 12px;
+    margin-top: 20px;
 }
-.type-tag>.btn{
+.type-tag .btn{
     display: inline-block;
     background: rgba(163, 178, 141, 0.3);
     border: 1.5px solid rgba(163, 178, 141, 0.6);
     color: #4A5A3F;
     backdrop-filter: blur(6px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    padding: 8px 16px;
+    padding: 8px 17px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: normal;
@@ -272,12 +272,59 @@ section{
     letter-spacing: 0.5px;
     transition: 0.3s ease;
 }
-.type-tag>.btn:hover{
+.type-tag .btn:hover{
     background: rgba(163, 178, 141, 0.5);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
+/*아이콘*/
+.btn.pc,
+.btn.mobile,
+.btn.figma,
+.btn.notion,
+.btn.github {
+  display: flex;
+  align-items: center;
+}
+
+/*아이콘 툴팁*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  background-color: rgba(0,0,0,0.75);
+  color: #fff;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.75) transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 /*clone-section*/

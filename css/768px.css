@@ -70,12 +70,21 @@
     .project-info ul li{
         font-size: 13px;
     }
-    .type-tag>.btn{
+    .type-tag .btn{
         font-size: 11px;
     }
 
     .view-button{
         font-size: 11px;
+    }
+
+    .btn.pc .icon,
+    .btn.mobile .icon,
+    .btn.figma .icon,
+    .btn.notion .icon,
+    .btn.github .icon{
+        width: 18px;
+        height: 18px;
     }
 
     /*mini 위치변경*/
