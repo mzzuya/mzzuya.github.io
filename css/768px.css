@@ -78,6 +78,10 @@
         font-size: 11px;
     }
 
+    .note{
+        font-size: 11px;
+    }
+
     .btn.pc .icon,
     .btn.mobile .icon,
     .btn.figma .icon,
@@ -112,7 +116,6 @@
     }
     .clone-section>p{
         font-size: 14px;
-        margin-bottom: 30px;
         max-width: 80%;
     }
     .clone-block .view-button{
