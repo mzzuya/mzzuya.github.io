@@ -285,7 +285,8 @@ section{
 .btn.mobile,
 .btn.figma,
 .btn.notion,
-.btn.github {
+.btn.github,
+.btn.ppt {
   display: flex;
   align-items: center;
 }

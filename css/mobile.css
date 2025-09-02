@@ -94,7 +94,8 @@
     .btn.mobile .icon,
     .btn.figma .icon,
     .btn.notion .icon,
-    .btn.github .icon{
+    .btn.github .icon,
+    .btn.ppt .icon{
         width: 18px;
         height: 18px;
     }
