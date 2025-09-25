@@ -17,6 +17,10 @@
     }
     .contact-links{
         font-size: 13px;
+        flex-direction: column;
+    }
+    .contact-links .bar{
+        display: none;
     }
     .scroll-icon img{
         width: 18px;
@@ -145,7 +149,7 @@
         display: none;
     }
     .footer-content h3{
-        font-size: 16px;
+        font-size: 14px;
     }
     footer> .copy{
         font-size: 11px;
